@@ -1,0 +1,49 @@
+{
+  "tool_name": "AirJelly",
+  "caption": "I hit a research dead end trying to find AirJelly's price \u2014 and I'm posting about it anyway.\n\nAirJelly just showed up on Product Hunt's AI Agents category page, listed right next to Framer, ElevenLabs, and Make. Product Hunt's own tagline for it: \"private, proactive desktop help.\" No chat window. It's built to run quietly in the background and surface help before you type a prompt.\n\nIt launched the same week as Sourclip 2.0 (a research workspace) and TrustedRouter (a privacy-focused model router) \u2014 all three sit in the same September 2026 wave: agentic, always-on, privacy-first tools that don't want to be another tab you talk to.\n\nHere's what I could NOT verify before my search tools capped out: pricing tiers, a real feature list, exact launch date. One line of positioning copy is all I've got from the primary listing. I'm not going to make up numbers to sound more finished than I am.\n\nIf you're going to click through (this post has affiliate links), spend 5 minutes checking the Product Hunt page yourself first. Full breakdown \u2014 link in bio.",
+  "slides": [
+    {
+      "heading": "No price. No feature list. Yet.",
+      "body": "AirJelly just landed on Product Hunt \u2014 I couldn't confirm the basics before my search tools capped out."
+    },
+    {
+      "heading": "Listed next to Framer, ElevenLabs",
+      "body": "Product Hunt's AI Agents page puts AirJelly beside those three. That's the peer group it's claiming."
+    },
+    {
+      "heading": "No chat window at all",
+      "body": "The pitch: it runs in the background and surfaces help before you type a prompt \u2014 a proactive desktop agent, not another chatbot tab."
+    },
+    {
+      "heading": "Same week, two other launches",
+      "body": "AirJelly debuted alongside Sourclip 2.0 (a research workspace) and TrustedRouter (a privacy-focused model router) \u2014 same September 2026 wave."
+    },
+    {
+      "heading": "Confirmed vs. not confirmed",
+      "body": "Confirmed: one line of positioning from Product Hunt. Not confirmed: pricing, feature list, exact launch date."
+    },
+    {
+      "heading": "Before you click the link",
+      "body": "Check the Product Hunt listing yourself first \u2014 early tools shift pricing fast, and this one may not have a live pricing page yet."
+    },
+    {
+      "heading": "Full sourcing \u2014 link in bio",
+      "body": "I broke down exactly what's verified and what's not, with direct links to check yourself."
+    }
+  ],
+  "hashtags": [
+    "AIagents",
+    "ProductHunt",
+    "DesktopAI",
+    "PrivacyFirstTech",
+    "AItools2026",
+    "WorkflowAutomation",
+    "TechReview",
+    "ProductivityTools"
+  ],
+  "sources": [
+    "https://producthunt.com/categories/ai-agents",
+    "https://startupcorners.com (Sept 2, 2026 product digest)",
+    "GitHub-hosted Product Hunt digest, Sept 13, 2026 (specific URL not captured before search limit reached)"
+  ]
+}

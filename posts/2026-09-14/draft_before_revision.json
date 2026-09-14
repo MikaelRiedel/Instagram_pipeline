@@ -1,0 +1,53 @@
+{
+  "tool_name": "AirJelly",
+  "caption": "I hit my research limit before I could confirm this tool's price \u2014 and I'm posting about it anyway. Here's why.\n\nAirJelly just popped up on Product Hunt's AI Agents category page as a new entrant, positioned as a desktop agent that works quietly in the background and surfaces help before you ask \u2014 not another chat window you have to prompt. Product Hunt's own framing puts it next to Framer, ElevenLabs, and Make, but calls out its angle as \"private, proactive desktop help.\"\n\nThat's a real distinction. Most of what's flooding feeds right now is \"chatbot with a new skin.\" AirJelly is riding the same September 2026 wave as tools like Sourclip 2.0 and TrustedRouter \u2014 agentic, always-on, privacy-conscious. That's the actual trend right now, confirmed across multiple Product Hunt digests.\n\nWhat I couldn't confirm before my search tools capped out: pricing tiers, a specific feature list, or an exact launch date. I'm not going to invent numbers to make this sound more finished than it is. If you're going to try it (or click an affiliate link for it), spend 5 minutes on the source page first.\n\nThis post contains affiliate links. Full breakdown \u2014 link in bio.",
+  "slides": [
+    {
+      "heading": "A new AI agent that doesn't chat",
+      "body": "AirJelly just landed on Product Hunt's AI Agents page. It's built to work quietly in the background, not wait for your prompts."
+    },
+    {
+      "heading": "The pitch: private + proactive",
+      "body": "Product Hunt's own category page describes it as adding \"private, proactive desktop help\" next to tools like Framer, ElevenLabs, and Make."
+    },
+    {
+      "heading": "Local-first, not cloud-first",
+      "body": "The positioning is that it surfaces help before you ask, running locally instead of sending everything to a server. That's the whole differentiator."
+    },
+    {
+      "heading": "Why now: the trend it's riding",
+      "body": "Sept 2026 Product Hunt digests flag \"the rise of agentic workflows\" and \"privacy-conscious AI tooling gaining traction.\" AirJelly sits right at that intersection."
+    },
+    {
+      "heading": "What I could NOT confirm",
+      "body": "No public pricing page found. No verified 3-5 feature list. Only the one-line positioning is sourced from a primary listing \u2014 I'm not guessing past that."
+    },
+    {
+      "heading": "Same launch wave, for context",
+      "body": "It debuted alongside Sourclip 2.0 (a research workspace) and TrustedRouter (a privacy-focused model router) \u2014 same week, same category, same trend."
+    },
+    {
+      "heading": "Before you click anything",
+      "body": "Check the Product Hunt listing yourself for pricing before you commit. Early-stage tools change fast, and this one may not have a live pricing page yet."
+    },
+    {
+      "heading": "Full details in bio",
+      "body": "I broke down sourcing, what's confirmed vs. not, and direct links to check yourself. Link in bio."
+    }
+  ],
+  "hashtags": [
+    "AIagents",
+    "ProductivityTools",
+    "AItools2026",
+    "PrivacyFirstTech",
+    "ProductHunt",
+    "DesktopAI",
+    "WorkflowAutomation",
+    "TechReview"
+  ],
+  "sources": [
+    "https://producthunt.com/categories/ai-agents",
+    "https://startupcorners.com (Sept 2, 2026 product digest)",
+    "GitHub-hosted Product Hunt digest, Sept 13, 2026 (specific URL not captured before search limit reached)"
+  ]
+}
