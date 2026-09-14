@@ -1,0 +1,41 @@
+name: Daily Instagram content
+
+on:
+  schedule:
+    # 13:00 UTC every day -- adjust to whenever you want the day's draft
+    # ready. (UTC 13:00 is 9am US Eastern / 2pm UK / 3pm Central Europe.)
+    - cron: "0 13 * * *"
+  # Lets you trigger a run on demand from the Actions tab, without waiting
+  # for the schedule -- useful for testing.
+  workflow_dispatch: {}
+
+permissions:
+  contents: write  # needed so the workflow can commit/push new posts + history.json
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Generate today's content
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 generate_content.py
+
+      - name: Publish draft to Buffer
+        env:
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
+        run: python3 publish_to_buffer.py

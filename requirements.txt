@@ -1,0 +1,3 @@
+anthropic>=0.40
+pillow>=10
+requests>=2.31
