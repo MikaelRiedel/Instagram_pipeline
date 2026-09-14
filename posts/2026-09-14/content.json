@@ -1,49 +1,49 @@
 {
-  "tool_name": "AirJelly",
-  "caption": "I hit a research dead end trying to find AirJelly's price \u2014 and I'm posting about it anyway.\n\nAirJelly just showed up on Product Hunt's AI Agents category page, listed right next to Framer, ElevenLabs, and Make. Product Hunt's own tagline for it: \"private, proactive desktop help.\" No chat window. It's built to run quietly in the background and surface help before you type a prompt.\n\nIt launched the same week as Sourclip 2.0 (a research workspace) and TrustedRouter (a privacy-focused model router) \u2014 all three sit in the same September 2026 wave: agentic, always-on, privacy-first tools that don't want to be another tab you talk to.\n\nHere's what I could NOT verify before my search tools capped out: pricing tiers, a real feature list, exact launch date. One line of positioning copy is all I've got from the primary listing. I'm not going to make up numbers to sound more finished than I am.\n\nIf you're going to click through (this post has affiliate links), spend 5 minutes checking the Product Hunt page yourself first. Full breakdown \u2014 link in bio.",
+  "tool_name": "AdAI",
+  "caption": "AdAI has been live for 3 days and still has zero public pricing page. I'm writing about it anyway.\n\nIt launched September 11, 2026 out of Revolution Venture Studios, a New York startup studio \u2014 not a solo founder side project. And it's doing something different than the usual \"type a prompt, get an ad\" tools flooding the market: it uses AI agents that pull from your actual brand assets \u2014 logos, product shots, past creative \u2014 plus your brand guidelines, and output finished image AND video ads from the same workflow. Not fifty random drafts to sort through. Finished files.\n\nHere's the part I'm not going to gloss over: there's no confirmed pricing, no independent hands-on reviews, and no track record yet on whether the output needs heavy editing before it's actually postable. That's usually where early ad-AI tools quietly fall apart \u2014 the week-one demo looks great, the month-one reality is messier.\n\nIf you manage paid social or brand creative and you're sick of prompt-engineering your way to something on-brand, this is worth bookmarking and checking back on in a few weeks once real users have run actual campaigns through it.\n\nThis post contains affiliate links. Full breakdown \u2014 link in bio.",
   "slides": [
     {
-      "heading": "No price. No feature list. Yet.",
-      "body": "AirJelly just landed on Product Hunt \u2014 I couldn't confirm the basics before my search tools capped out."
+      "heading": "Zero pricing. Zero reviews. Day 3.",
+      "body": "A New York startup just launched an AI ad platform that skips prompts and builds finished ads from your actual brand assets."
     },
     {
-      "heading": "Listed next to Framer, ElevenLabs",
-      "body": "Product Hunt's AI Agents page puts AirJelly beside those three. That's the peer group it's claiming."
+      "heading": "Who's actually behind it",
+      "body": "AdAI launched Sept 11, 2026 out of Revolution Venture Studios, a NYC startup studio \u2014 not a solo founder's weekend project."
     },
     {
-      "heading": "No chat window at all",
-      "body": "The pitch: it runs in the background and surfaces help before you type a prompt \u2014 a proactive desktop agent, not another chatbot tab."
+      "heading": "Not prompt-to-image",
+      "body": "It pulls your logos, product photos, and past creative, then applies your brand guidelines automatically \u2014 no typing 'make it look premium' into a box."
     },
     {
-      "heading": "Same week, two other launches",
-      "body": "AirJelly debuted alongside Sourclip 2.0 (a research workspace) and TrustedRouter (a privacy-focused model router) \u2014 same September 2026 wave."
+      "heading": "Image AND video, one workflow",
+      "body": "Most ad-AI tools make you pick: static or video. AdAI outputs both from the same process, aiming for publish-ready files, not rough drafts."
     },
     {
-      "heading": "Confirmed vs. not confirmed",
-      "body": "Confirmed: one line of positioning from Product Hunt. Not confirmed: pricing, feature list, exact launch date."
+      "heading": "The gap nobody's filled in yet",
+      "body": "No public pricing page, no independent hands-on reviews, no track record on how much editing the output needs before it's actually postable."
     },
     {
-      "heading": "Before you click the link",
-      "body": "Check the Product Hunt listing yourself first \u2014 early tools shift pricing fast, and this one may not have a live pricing page yet."
+      "heading": "My verdict at day 3",
+      "body": "Worth bookmarking, not worth budgeting for yet. Early ad-AI tools usually show their real limitations in month one, not week one."
     },
     {
-      "heading": "Full sourcing \u2014 link in bio",
-      "body": "I broke down exactly what's verified and what's not, with direct links to check yourself."
+      "heading": "Check back with me",
+      "body": "I'm getting hands-on access and will post real screenshots plus pricing once it's live. Full breakdown \u2014 link in bio."
     }
   ],
   "hashtags": [
-    "AIagents",
-    "ProductHunt",
-    "DesktopAI",
-    "PrivacyFirstTech",
-    "AItools2026",
-    "WorkflowAutomation",
-    "TechReview",
-    "ProductivityTools"
+    "AITools",
+    "AdTech",
+    "MarketingAI",
+    "AIAdvertising",
+    "StartupTools",
+    "AIAgents",
+    "AdCreative",
+    "PaidSocial"
   ],
   "sources": [
-    "https://producthunt.com/categories/ai-agents",
-    "https://startupcorners.com (Sept 2, 2026 product digest)",
-    "GitHub-hosted Product Hunt digest, Sept 13, 2026 (specific URL not captured before search limit reached)"
+    "https://agentic.ai/news",
+    "https://www.producthunt.com/categories/ai-agents",
+    "https://www.producthunt.com/products"
   ]
 }
