@@ -62,6 +62,26 @@ BANNED_PHRASES = [
     "supercharge", "unleash", "dive in", "game changer", "cutting-edge",
 ]
 
+# True  = posts go straight into Buffer's queue and publish on their own.
+# False = posts land as drafts in Buffer for manual review before sending.
+AUTO_PUBLISH = True
+
+# Flip to True ONLY once real affiliate links actually exist in the bio link
+# destination. Until then, claiming "this post contains affiliate links" is a
+# false disclosure -- the mirror image of faking personal experience.
+HAS_AFFILIATE_LINKS = False
+
+_DISCLOSURE_RULE = (
+    "It MUST clearly disclose the affiliate relationship (e.g. 'This post contains "
+    "affiliate links') and end by pointing to the bio link (e.g. 'Full breakdown -- link "
+    "in bio')."
+    if HAS_AFFILIATE_LINKS
+    else
+    "End by pointing to the bio link (e.g. 'Full breakdown -- link in bio'). Do NOT claim "
+    "the post contains affiliate links or any paid relationship -- there aren't any yet, "
+    "and saying otherwise would be a false disclosure."
+)
+
 AUDIENCE_CONTEXT = (
     "Audience: general productivity and AI enthusiasts -- curious people who enjoy "
     "discovering new tools and workflows for both work and personal life. NOT specifically "
@@ -90,9 +110,8 @@ WRITING_RULES = (
     f"- Banned words/phrases -- do not use any of these anywhere: {', '.join(BANNED_PHRASES)}.\n"
     "- caption: an Instagram caption (under 2200 characters). The FIRST LINE must be a "
     "scroll-stopping hook -- a specific claim, number, or contrarian observation, not a "
-    "generic opener like 'Have you heard of...' or 'Let's talk about...'. It MUST clearly "
-    "disclose the affiliate relationship (e.g. 'This post contains affiliate links') and "
-    "end by pointing to the bio link (e.g. 'Full breakdown -- link in bio'). Do NOT include "
+    "generic opener like 'Have you heard of...' or 'Let's talk about...'. "
+    f"{_DISCLOSURE_RULE} Do NOT include "
     "any raw URLs in the caption -- Instagram won't make them clickable anyway.\n"
     "- slides: produce between 5 and 8 carousel slides. Slide 1 is the hook -- it should "
     "work as a standalone thumbnail, punchy, under 8 words if possible. Middle slides each "
@@ -234,14 +253,17 @@ mutation EditPost($input: EditPostInput!) {
 """
 
 
-def create_draft_post(token: str, channel_id: str, caption: str, image_urls: list[str]) -> dict:
+def create_post(token: str, channel_id: str, caption: str, image_urls: list[str]) -> dict:
     variables = {
         "input": {
             "text": caption,
             "channelId": channel_id,
             "schedulingType": "automatic",
+            # Goes into the next open slot of the channel's posting schedule
+            # in Buffer -- so Buffer's schedule, not the Action's run time,
+            # decides when it actually appears on Instagram.
             "mode": "addToQueue",
-            "saveToDraft": True,
+            "saveToDraft": not AUTO_PUBLISH,
             "assets": [{"image": {"url": url}} for url in image_urls],
             # A carousel isn't its own Instagram post type -- it's a "post"
             # that happens to carry multiple images in `assets`.
@@ -258,7 +280,9 @@ def edit_draft_post(token: str, post_id: str, caption: str, image_urls: list[str
             "id": post_id,
             "text": caption,
             "assets": [{"image": {"url": url}} for url in image_urls],
-            "saveToDraft": True,
+            # Must match AUTO_PUBLISH, or revising a queued post would
+            # silently demote it back to a draft and it'd never go out.
+            "saveToDraft": not AUTO_PUBLISH,
         }
     }
     data = graphql_request(token, EDIT_POST_MUTATION, variables)

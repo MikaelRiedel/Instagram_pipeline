@@ -38,11 +38,12 @@ import os
 import sys
 
 from pipeline_common import (
+    AUTO_PUBLISH,
     HISTORY_PATH,
     SCRIPT_DIR,
     build_caption,
     commit_and_push,
-    create_draft_post,
+    create_post,
     find_post_dir,
     get_instagram_channel_id,
     get_organization_id,
@@ -83,8 +84,11 @@ def main() -> None:
     org_id = get_organization_id(token)
     channel_id = get_instagram_channel_id(token, org_id)
 
-    print("Creating a DRAFT carousel post (will NOT publish automatically)...")
-    result = create_draft_post(token, channel_id, caption, image_urls)
+    if AUTO_PUBLISH:
+        print("Adding carousel to the Buffer queue (WILL publish on its own)...")
+    else:
+        print("Creating a DRAFT carousel post (will NOT publish automatically)...")
+    result = create_post(token, channel_id, caption, image_urls)
 
     if "message" in result:
         print(f"Buffer rejected the post: {result['message']}")
@@ -93,9 +97,13 @@ def main() -> None:
     post_id = result["post"]["id"]
     (post_dir / "buffer_post_id.txt").write_text(post_id)
 
-    print(f"\nSuccess! Draft post created (id: {post_id})")
+    print(f"\nSuccess! Post created (id: {post_id})")
     print(f"Topic: {content['tool_name']}")
-    print("Open the Buffer app to review and send it -- nothing is live yet.")
+    if AUTO_PUBLISH:
+        print("It's queued in Buffer and will publish to Instagram at the next slot in")
+        print("your Buffer posting schedule -- no further action needed from you.")
+    else:
+        print("Open the Buffer app to review and send it -- nothing is live yet.")
     print(f"\nIf you want changes later, run:")
     print(f"  python3 revise_content.py {post_dir.name} \"your feedback here\"")
 
