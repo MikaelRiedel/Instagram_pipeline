@@ -176,12 +176,14 @@ def research_topic(client: anthropic.Anthropic, history: list[str], mode: str) -
                 "you find a genuinely newsworthy angle, like a brand-new flagship feature or "
                 "version launch, in which case name that specific angle explicitly.\n"
                 f"Do NOT repeat any of these already-covered topics: {avoid_list}.\n\n"
-                "Reply with a plain-text research summary covering: the tool's name, the "
-                "single most impressive thing it does, what tedious task it replaces, its "
-                "standout features by name, one honest limitation, and the source URLs you "
-                "used. Write the summary so that someone reading only it could produce an "
-                "exciting post -- lead with what makes this genuinely interesting, not with "
-                "a feature inventory."
+                "Reply with a plain-text research summary. Start with this line exactly, "
+                "since it's used to fetch the product's own screenshot for the slides:\n"
+                "OFFICIAL_URL: <the tool's real homepage, e.g. https://example.com>\n\n"
+                "Then cover: the tool's name, the single most impressive thing it does, "
+                "what tedious task it replaces, its standout features by name, one honest "
+                "limitation, and the source URLs you used. Write the summary so that "
+                "someone reading only it could produce an exciting post -- lead with what "
+                "makes this genuinely interesting, not with a feature inventory."
             ),
         }],
     ) as stream:

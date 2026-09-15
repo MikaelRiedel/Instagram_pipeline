@@ -36,6 +36,9 @@ jobs:
       - name: Generate today's content
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Optional -- without it, photo slides fall back to graphics
+          # rather than failing the run.
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: python3 generate_content.py
 
       - name: Queue post in Buffer
