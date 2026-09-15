@@ -62,10 +62,27 @@ BANNED_PHRASES = [
     "supercharge", "unleash", "dive in", "game changer", "cutting-edge",
 ]
 
+AUDIENCE_CONTEXT = (
+    "Audience: general productivity and AI enthusiasts -- curious people who enjoy "
+    "discovering new tools and workflows for both work and personal life. NOT specifically "
+    "founders/businesses chasing ROI -- frame value as 'this makes your work or day-to-day "
+    "life easier, faster, or more interesting to explore', not business-case language."
+)
+
 WRITING_RULES = (
+    f"{AUDIENCE_CONTEXT}\n\n"
     "Requirements:\n"
-    "- Tone: like a sharp, specific friend telling you about something they actually "
-    "tried -- not an ad. Include the limitation, don't oversell.\n"
+    "- CRITICAL -- never fabricate personal experience. You have not used this tool. Do "
+    "NOT write things like 'I've been using this for 3 months', 'the feature I use most', "
+    "or 'I spend a few minutes a week fixing it'. Invented first-person anecdotes on an "
+    "affiliate post are a real compliance problem (FTC endorsement rules require stated "
+    "experience to be genuine), not just a style issue. Write as a well-informed reviewer "
+    "describing what the tool does and what its users report -- 'It joins your Zoom call "
+    "and...', 'Users consistently flag that...'. Specificity must come from the research, "
+    "never from a made-up anecdote.\n"
+    "- Tone: sharp and specific, like a knowledgeable person explaining something worth "
+    "knowing about -- not an ad, and not a fake testimonial. Include the limitation, "
+    "don't oversell.\n"
     "- Be CONCRETE, not generic: use real numbers, exact feature names, exact pricing, "
     "and a specific example of what someone would actually use this for. Never settle for "
     "vague claims like 'powerful' or 'boosts productivity' when a specific detail from the "
@@ -85,7 +102,9 @@ WRITING_RULES = (
     "written to fit on a graphic, not a paragraph.\n"
     "- hashtags: 5-10 relevant hashtags, no '#' symbol included.\n"
     "- sources: the URLs you used for pricing/feature facts, so a human can spot-check "
-    "them.\n"
+    "them. At least one source MUST be independent of the vendor (a review, a press "
+    "piece, a Reddit/Hacker News/Product Hunt discussion) -- the tool's own pricing page "
+    "alone does not verify that real people actually use and rate it.\n"
 )
 
 
