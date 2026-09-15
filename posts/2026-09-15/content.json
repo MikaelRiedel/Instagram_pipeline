@@ -1,54 +1,54 @@
 {
-  "tool_name": "Readwise Reader",
-  "caption": "Readwise Reader charges $9.99/month and still caps how many questions you can ask its built-in AI before your next billing cycle resets.\n\nReadwise Reader is the read-it-later app from the team behind Readwise's highlight-syncing tool. It pulls articles, PDFs, newsletters, RSS feeds, X/Twitter threads, YouTube transcripts, and EPUBs into one reading queue instead of scattering them across six tabs and three apps.\n\nA few specifics worth knowing before you consider it:\n\n\u2192 $9.99/mo billed annually ($119.88/year) for the Full plan, which includes Reader. Month-to-month billing is $12.99/mo. A cheaper Lite tier ($5.59/mo) exists but drops Reader entirely \u2014 highlights only.\n\u2192 Ghostreader, the built-in AI, summarizes articles and answers questions about a document as you read it. Useful for deciding whether a long piece is worth your time, but it reads one document at a time \u2014 not a research tool across sources.\n\u2192 The interface is keyboard-first: vim-style j/k navigation through a three-pane layout, no mouse required.\n\u2192 Highlights feed into Readwise's spaced-repetition flashcard system, so something you highlighted in March can resurface as a review card in June.\n\u2192 Students and academics get 50% off any plan.\n\nWorth flagging honestly: there's no permanent free tier after the 30-day trial, no team plans, and recent third-party reviews average 3.64/5, with people citing Ghostreader's credit caps and occasional lag as the main complaints.\n\nThis post contains affiliate links. Full breakdown \u2014 link in bio.",
+  "tool_name": "Wispr Flow",
+  "caption": "One blogger dictated 182,718 words into this app across 36 different programs \\u2014 and never manually rewrote a single one.\n\nWispr Flow started as voice dictation, but the part making reviewers stop mid-sentence is Command Mode: highlight what you just said, tell it \\\"make this more concise\\\" or \\\"make this sound more formal,\\\" and it rewrites itself. No keyboard. No highlight-and-retype. You're talking to your draft like it takes notes for a living.\n\nUnderneath that is AI Auto-Edits \\u2014 stripping filler words, fixing punctuation, formatting lists while you're still talking, in Slack, email, ChatGPT, Claude, docs, wherever you type. And it's grown past dictation entirely: Notetaker, now on Mac, sits in your meetings and hands you the notes afterward. You never open a notebook.\n\nIt's not flawless everywhere. Windows users have flagged occasional freezing in apps like VS Code, and Flow re-adding itself to startup after being disabled \\u2014 Mac is currently the smoother ride. But the volume of independent, hands-on coverage this thing has picked up in the last couple months suggests it's doing something real.\n\nIf you've ever wished you could just say the edit instead of making it, this is worth five minutes of curiosity.\n\nFull breakdown \\u2014 link in bio.",
   "slides": [
     {
-      "heading": "Reader's AI Can Run Dry Mid-Month",
-      "body": "Ghostreader runs on a credit system, and users report hitting the cap before their monthly reset."
+      "heading": "Say The Edit Out Loud",
+      "body": "No keyboard. No highlighting. You talk, and the words rewrite themselves in front of you."
     },
     {
-      "heading": "Everything You Read, One Inbox",
-      "body": "Articles, PDFs, EPUBs, newsletters, RSS feeds, X/Twitter threads, and YouTube transcripts all land in a single queue instead of six browser tabs."
+      "heading": "The Type-Then-Fix Loop We All Do",
+      "body": "Draft the email, then go back: cut the run-ons, delete every \\\"um,\\\" fix the punctuation, reformat the list. Every email, every Slack message, every single time."
     },
     {
-      "heading": "$9.99/mo Gets You Reader",
-      "body": "That's $119.88/year billed annually for the Full plan. Monthly billing runs $12.99. The $5.59/mo Lite tier skips Reader entirely \u2014 highlights only."
+      "heading": "Editing Becomes A Conversation",
+      "body": "Highlight what you just said, tell it \\\"make this more concise\\\" or \\\"sound more formal,\\\" and it rewrites in place \\u2014 like dictating notes to someone who actually listens."
     },
     {
-      "heading": "Ghostreader Summarizes As You Read",
-      "body": "Ask it to summarize a long article before committing to reading it, or query a PDF mid-read. It's reading one document at a time, not researching across sources."
+      "heading": "It Cleans Up Before You Notice",
+      "body": "Filler words vanish, punctuation fixes itself, lists format mid-sentence \\u2014 in Slack, email, ChatGPT, docs, anywhere you'd normally type."
     },
     {
-      "heading": "Vim-Style Keys, No Mouse Needed",
-      "body": "j/k navigation moves you through the three-pane reading queue \u2014 built for people who'd rather not touch a trackpad."
+      "heading": "Meetings Turn Into Notes On Their Own",
+      "body": "Notetaker sits in your Mac meetings and hands you the notes afterward. You never open a notebook or type a word."
     },
     {
-      "heading": "Highlights Become Flashcards Later",
-      "body": "Readwise's spaced-repetition system resurfaces old highlights as quiz-style review cards, months after you first read them."
+      "heading": "The Rough Edge",
+      "body": "Windows users report occasional freezing in apps like VS Code, and Flow re-adding itself to startup after being turned off. Mac is the smoother experience right now."
     },
     {
-      "heading": "The Real Downsides",
-      "body": "No free tier after the 30-day trial, no team plans, and reviews average 3.64/5 \u2014 Ghostreader's credit caps and lag are the top complaints."
-    },
-    {
-      "heading": "See The Full Pricing Breakdown",
-      "body": "Students get 50% off any plan. Full comparison and details \u2014 link in bio."
+      "heading": "Go Hear It For Yourself",
+      "body": "Full breakdown of every feature \\u2014 link in bio."
     }
   ],
   "hashtags": [
-    "readwise",
-    "productivityapps",
-    "aitools",
-    "readitlater",
-    "digitalreading",
-    "secondbrain",
-    "knowledgemanagement",
-    "notetaking"
+    "productivity",
+    "voicetotext",
+    "AItools",
+    "dictation",
+    "voiceassistant",
+    "remotework",
+    "futureofwork",
+    "techtools",
+    "producthunt",
+    "worklife"
   ],
   "sources": [
-    "https://www.speedreadinglounge.com/readwise-reader-review",
-    "https://gleamr.io/blog/readwise-reader-pricing-2026",
-    "https://www.marqly.com/blog/readwise-reader-review-2026",
-    "https://nubiapage.com/readwise-review-2026-app-pricing-alternatives-free-trial-download-user-experience-and-faqs/"
+    "https://www.producthunt.com/products/wisprflow/reviews",
+    "https://willowvoice.com/blog/wispr-flow-review-voice-dictation",
+    "https://tldv.io/blog/wisprflow/",
+    "https://efficient.app/apps/wispr-flow",
+    "https://zackproser.com/blog/wisprflow-review",
+    "https://spokenly.app/blog/wispr-flow-review"
   ]
 }

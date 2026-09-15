@@ -108,7 +108,7 @@ def main() -> None:
     current_content = load_content(post_dir)
 
     print(f"\nApplying feedback: \"{feedback}\"")
-    client = anthropic.Anthropic()
+    client = anthropic.Anthropic(max_retries=0, timeout=600.0)
     revised = revise_with_feedback(client, current_content, feedback)
 
     # Keep the previous version around so you can see what changed.

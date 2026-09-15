@@ -4,14 +4,14 @@ Instagram carousel content generator.
 What this does:
   1. Alternates between two research modes so coverage stays ~50/50 over
      time (not left to chance, which is what drifted to "always newest"):
-       - "proven": a tool with a real track record -- confirmed pricing,
-         real reviews, an underrated gem or a big recent update
-       - "new": a genuinely recent launch/update -- but ONLY if Claude can
-         confirm real pricing and real evidence of adoption; otherwise it's
-         instructed to reject that candidate and search for a different one
-         rather than publish something unresearchable (this is the fix for
-         posts like the 3-day-old tool with no confirmed pricing that
-         slipped through before)
+       - "proven": a tool with a real track record -- real users and
+         discussion, an underrated gem or a big recent update
+       - "new": a genuinely recent launch/update -- but only if it's real and
+         usable today, not vaporware or a waitlist (the fix for the 3-day-old
+         tool with nothing verifiable that slipped through before)
+     Research aims at what makes a tool exciting -- its standout capability
+     and what drudgery it removes -- not at pricing tiers, which made earlier
+     posts read like spec sheets.
   2. Asks Claude to write a caption + carousel slides, then critiques and
      rewrites its own draft for specificity and punch
   3. Renders each slide as a designed image with Pillow
@@ -58,10 +58,12 @@ OVEREXPOSED_TOOLS = [
     "Notion AI", "Grammarly", "Jasper", "Copy.ai", "Midjourney", "Canva Magic Studio",
 ]
 
+# Pricing-related flags deliberately removed -- pricing is no longer something
+# the post needs, so "no public pricing" is not a problem. What still matters
+# is whether the tool is actually real and usable.
 UNCONFIRMED_RED_FLAGS = [
     "could not confirm", "cannot confirm", "not confirmed", "unable to confirm",
-    "pricing not available", "pricing not yet public", "pricing tbd",
-    "waitlist only", "no public pricing",
+    "waitlist only", "not yet launched", "coming soon", "invite only",
 ]
 
 
@@ -101,55 +103,66 @@ def research_topic(client: anthropic.Anthropic, history: list[str], mode: str) -
     if mode == "proven":
         task = (
             "Your job: find ONE AI tool or productivity app with a genuine track record -- "
-            "something that's been around long enough to have confirmed pricing and real "
-            "user reviews, but that this audience likely hasn't tried yet. This can be a "
-            "well-made tool that never got much attention, or an established one that just "
-            "shipped a major feature worth revisiting. It does NOT need to be new -- being "
-            "genuinely useful and under-the-radar matters more here than recency."
+            "something that's been around long enough that real people use and discuss it, "
+            "but that this audience likely hasn't tried yet. A well-made tool that never got "
+            "much attention, or an established one that just shipped something worth "
+            "revisiting. It does NOT need to be new -- being genuinely useful and "
+            "under-the-radar matters more here than recency."
         )
     else:
         task = (
             "Your job: find ONE AI tool or productivity app that is genuinely recent -- "
-            "launched, out of beta, or majorly updated within roughly the last 1-6 months.\n\n"
-            "HARD requirements -- the tool you write up must have ALL THREE of these "
-            "confirmed by search, not assumed:\n"
-            "1. A specific, real price or pricing tier. 'Pricing not yet public', 'waitlist "
-            "only', or you guessing a likely price does NOT count.\n"
-            "2. Real evidence of adoption/reception -- meaningful Product Hunt comments or "
-            "upvotes, press coverage, Hacker News/Reddit discussion, or review site "
-            "listings. A bare directory listing with zero engagement is NOT enough.\n"
-            "3. Actual recency. A tool that launched years ago does NOT qualify just "
-            "because it still exists -- if you pick an established product, the angle must "
-            "be a specific feature or version it shipped in the last ~6 months, and that "
-            "feature must be what the post is about.\n\n"
-            "Start your summary with a line in exactly this format so recency is auditable:\n"
-            "RECENCY: <what launched or changed, and roughly when>\n"
-            "If you can't fill that line in honestly with something from the last ~6 "
-            "months, this candidate does not qualify for today."
+            "launched, out of beta, or majorly updated within roughly the last 1-6 months. "
+            "If you pick an established product, the angle must be something it shipped in "
+            "that window, and that new thing must be what the post is about.\n\n"
+            "Start your summary with this line so recency is auditable:\n"
+            "RECENCY: <what launched or changed, and roughly when>"
         )
 
-    # Search budget matters a lot: every result stays in context and gets
-    # re-billed on each later turn of the tool loop, so search count drives
-    # cost super-linearly. Hence the explicit plan + hard cap below.
-    search_discipline = (
-        "\n\nSEARCH BUDGET -- important: you have a hard limit of 4 web searches, and each "
-        "one materially increases cost. Use them deliberately:\n"
-        "- 1 broad discovery search to surface candidates\n"
-        "- 2-3 targeted searches to verify the single most promising candidate (its pricing "
-        "page, and reviews/discussion of it)\n"
-        "Do not browse speculatively or explore candidates you've already ruled out.\n\n"
-        "If you run out of searches without being able to confirm the requirements above, "
-        "do NOT write up an unverified tool and do NOT pad the summary with caveats. "
-        "Instead, reply with exactly 'NO QUALIFYING CANDIDATE' on the first line, followed "
-        "by a one-line reason. A skipped day is much better than a post with made-up "
-        "pricing."
+    # Only two bars now, and neither is pricing -- pricing ate the search
+    # budget and turned posts into spec sheets. What actually matters is that
+    # the tool is real and that there's something exciting to say about it.
+    task += (
+        "\n\nTwo things must be true of whatever you pick:\n"
+        "1. It is REAL and usable today -- not a waitlist, not a concept, not vaporware. "
+        "Someone reading this post must be able to go and try it.\n"
+        "2. There is some real-world signal it exists and works -- press, a review, a "
+        "Product Hunt or Reddit or Hacker News discussion, anything beyond the vendor's "
+        "own marketing page.\n\n"
+        "WHAT TO ACTUALLY RESEARCH -- this is for an inspiring post, not a spec sheet. "
+        "Spend your effort finding:\n"
+        "- The single most impressive or surprising thing it does (the 'wait, that's "
+        "possible?' capability)\n"
+        "- A vivid, concrete picture of what using it replaces -- the tedious thing it "
+        "removes from someone's day\n"
+        "- Exact feature names and real capabilities, so the post can be specific rather "
+        "than vague\n"
+        "- One honest limitation\n"
+        "Do NOT spend searches hunting down pricing tiers, quotas, or usage limits. Price "
+        "is not what makes someone want a tool, and the post will barely mention it."
     )
-    task += search_discipline
 
-    response = client.messages.create(
+    # Search results accumulate in context and get re-billed on every later
+    # turn of the loop, so search count drives cost super-linearly.
+    task += (
+        "\n\nSEARCH BUDGET: you have 5 web searches, and each one materially increases "
+        "cost. Plan them: 1 broad discovery search, then targeted ones on the single most "
+        "promising candidate. Don't re-explore candidates you've ruled out.\n\n"
+        "If you run low on searches, work with what you have -- as long as the tool is "
+        "clearly real and usable, write the post. Only reply with 'NO QUALIFYING "
+        "CANDIDATE' on the first line (plus a one-line reason) if you genuinely could not "
+        "find any tool that's real and usable -- that bar is about avoiding vaporware, not "
+        "about having every detail nailed down."
+    )
+
+    # Streamed, not a plain create(): this call runs a multi-step web-search
+    # loop that can exceed the SDK's 10-minute request timeout. A timeout here
+    # silently triggers retries, each re-running every search from scratch --
+    # which is how a "10 minute" run turned into 30 minutes and 3x the cost.
+    with client.messages.stream(
         model=MODEL,
         max_tokens=4000,
-        tools=[{"type": "web_search_20260209", "name": "web_search", "max_uses": 4}],
+        tools=[{"type": "web_search_20260209", "name": "web_search", "max_uses": 5}],
         messages=[{
             "role": "user",
             "content": (
@@ -163,16 +176,16 @@ def research_topic(client: anthropic.Anthropic, history: list[str], mode: str) -
                 "you find a genuinely newsworthy angle, like a brand-new flagship feature or "
                 "version launch, in which case name that specific angle explicitly.\n"
                 f"Do NOT repeat any of these already-covered topics: {avoid_list}.\n\n"
-                "Once you have a qualifying candidate, confirm via web search: its current "
-                "pricing tiers, its 3-5 most useful features, and at least one honest "
-                "limitation or downside -- don't only write positives, credibility matters "
-                "more than hype.\n\n"
-                "Reply with a plain-text research summary covering: tool name, why it's "
-                "worth covering, pricing, features, the limitation, and the source URLs "
-                "you used."
+                "Reply with a plain-text research summary covering: the tool's name, the "
+                "single most impressive thing it does, what tedious task it replaces, its "
+                "standout features by name, one honest limitation, and the source URLs you "
+                "used. Write the summary so that someone reading only it could produce an "
+                "exciting post -- lead with what makes this genuinely interesting, not with "
+                "a feature inventory."
             ),
         }],
-    )
+    ) as stream:
+        response = stream.get_final_message()
 
     return "".join(b.text for b in response.content if b.type == "text")
 
@@ -185,8 +198,8 @@ def write_post(client: anthropic.Anthropic, research: str) -> dict:
         messages=[{
             "role": "user",
             "content": (
-                "Using this research, write an Instagram carousel post for a business "
-                "account reviewing AI tools and productivity software:\n\n"
+                "Using this research, write an Instagram carousel post that makes people "
+                "want to go try this tool:\n\n"
                 f"{research}\n\n{WRITING_RULES}"
             ),
         }],
@@ -207,11 +220,17 @@ def critique_and_revise(client: anthropic.Anthropic, draft: dict) -> dict:
             "content": (
                 "Here is a draft Instagram post:\n\n"
                 f"{json.dumps(draft, indent=2)}\n\n"
-                "Critique it harshly: flag every generic phrase, vague marketing "
-                "adjective ('powerful', 'game-changing', 'seamless', etc.), weak or boring "
-                "hook, and any slide that doesn't carry one specific, concrete point. Then "
-                "rewrite the whole post to fix every issue you found -- same tool, same "
-                "facts, but substantially punchier, more specific, and more scroll-stopping. "
+                "Critique it harshly against ONE test: would someone scrolling past this "
+                "stop, read it, and want the tool by the end? Specifically flag:\n"
+                "- A hook that doesn't earn the swipe\n"
+                "- Any slide that reads like a spec sheet, feature label, or pricing table "
+                "instead of something the reader would WANT\n"
+                "- Generic marketing adjectives ('powerful', 'game-changing', 'seamless')\n"
+                "- Vagueness where a vivid, specific picture was available in the facts\n"
+                "- Anything that sounds like a product brochure rather than a person who "
+                "found something genuinely cool\n"
+                "Then rewrite the whole post fixing every issue -- same tool, same facts, "
+                "but substantially more desirable to read. "
                 f"{WRITING_RULES}\n"
                 "Return ONLY the improved, rewritten version in the schema -- not the "
                 "critique itself."
@@ -228,7 +247,10 @@ def main() -> None:
         print('Set ANTHROPIC_API_KEY first, e.g.:\n  export ANTHROPIC_API_KEY="your-key-here"')
         sys.exit(1)
 
-    client = anthropic.Anthropic()
+    # max_retries=0 is deliberate: a retry of the research call re-runs every
+    # web search and gets billed again. A failed run that costs once and exits
+    # is far better than a silent 3x charge for output nobody ever receives.
+    client = anthropic.Anthropic(max_retries=0, timeout=600.0)
     history = load_history()
 
     mode = choose_mode(history)
@@ -241,19 +263,19 @@ def main() -> None:
 
     if research.strip().upper().startswith("NO QUALIFYING CANDIDATE"):
         print(
-            "\nResearch found nothing that met the bar (confirmed pricing + real adoption "
-            "evidence), so no post was generated today.\n"
-            "That's the intended behaviour -- a skipped day beats a post with invented "
-            "pricing. Nothing was written, rendered, or charged for writing."
+            "\nResearch couldn't find a tool that's actually real and usable today, so no "
+            "post was generated.\n"
+            "That's the intended behaviour -- a skipped day beats posting about vaporware. "
+            "Nothing was written, rendered, or charged for writing."
         )
         sys.exit(0)
 
     lowered = research.lower()
     if any(flag in lowered for flag in UNCONFIRMED_RED_FLAGS):
         print(
-            "\n/!\\ WARNING: this research mentions unconfirmed pricing/details despite "
-            "being told not to -- double check the caption's claims carefully before "
-            "approving this post."
+            "\n/!\\ WARNING: this research suggests the tool may not be fully launched or "
+            "usable yet (waitlist, invite-only, unconfirmed details) -- worth a manual "
+            "check before this goes out."
         )
 
     print("\nWriting first draft...")

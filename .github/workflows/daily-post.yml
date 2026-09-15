@@ -2,8 +2,8 @@ name: Daily Instagram content
 
 on:
   schedule:
-    # 13:00 UTC every day -- adjust to whenever you want the day's draft
-    # ready. (UTC 13:00 is 9am US Eastern / 2pm UK / 3pm Central Europe.)
+    # 09:00 UTC = 12:00 Finnish time, two hours before the 14:00 Buffer
+    # posting slot. Cron is always UTC and does not follow Finnish DST.
     - cron: "0 9 * * *"
   # Lets you trigger a run on demand from the Actions tab, without waiting
   # for the schedule -- useful for testing.
@@ -15,10 +15,13 @@ permissions:
 jobs:
   generate-and-publish:
     runs-on: ubuntu-latest
+    # Hard ceiling. A normal run is ~10 min; anything past 15 is stuck, and a
+    # stuck run costs real money in retried API calls. Fail loudly instead.
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -35,7 +38,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python3 generate_content.py
 
-      - name: Publish draft to Buffer
+      - name: Queue post in Buffer
         env:
           BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
         run: python3 publish_to_buffer.py
