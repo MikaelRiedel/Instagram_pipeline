@@ -619,6 +619,22 @@ def clear_old_slides(post_dir: Path) -> None:
         old_slide.unlink()
 
 
+def _product_view(shot: Image.Image, n: int) -> Image.Image:
+    """A post often has several product slides but the site offers one hero
+    image. Showing it whole every time looks lazy, so each successive product
+    slide zooms into a different region of it (a different panel of the UI)."""
+    w, h = shot.size
+    views = [
+        (0, 0, w, h),                                   # whole image
+        (0, 0, int(w * 0.62), int(h * 0.62)),           # top-left
+        (int(w * 0.38), int(h * 0.38), w, h),           # bottom-right
+        (int(w * 0.38), 0, w, int(h * 0.62)),           # top-right
+        (0, int(h * 0.38), int(w * 0.62), h),           # bottom-left
+        (int(w * 0.19), int(h * 0.19), int(w * 0.81), int(h * 0.81)),  # centre
+    ]
+    return shot.crop(views[n % len(views)])
+
+
 def render_all_slides(post: dict, post_dir: Path) -> list[Path]:
     clear_old_slides(post_dir)
     slides = post["slides"]
@@ -632,12 +648,14 @@ def render_all_slides(post: dict, post_dir: Path) -> list[Path]:
             print("    (no product shot available -- those slides fall back to graphics)")
 
     paths = []
+    product_count = 0
     for i, slide in enumerate(slides, start=1):
         kind = slide.get("image_kind", "graphic")
         artwork, style = None, "graphic"
 
         if kind == "product" and product_shot is not None:
-            artwork, style = product_shot, "product"
+            artwork, style = _product_view(product_shot, product_count), "product"
+            product_count += 1
         elif kind == "photo":
             artwork = imagery.stock_photo(slide.get("image_query", ""))
             if artwork is not None:

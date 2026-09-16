@@ -80,14 +80,17 @@ def save_history(history: list[str]) -> None:
 
 def sources_look_vendor_only(post: dict) -> bool:
     """Rough check that the post cites something other than the vendor's own
-    site. Not exact -- it just raises a flag for the human reviewer."""
-    sources = post.get("sources", [])
-    if len(sources) <= 1:
-        return True
-    key = "".join(c for c in post.get("tool_name", "").lower() if c.isalnum())[:8]
-    if not key:
-        return False
-    return all(key in src.lower().replace("-", "").replace(".", "") for src in sources)
+    site. Compares domains only -- review sites routinely put the tool's name
+    in the URL path (g2.com/products/krisp), which used to trip a false alarm."""
+    from urllib.parse import urlparse
+
+    def domain(url: str) -> str:
+        host = urlparse(url if "://" in url else "https://" + url).netloc.lower()
+        return host[4:] if host.startswith("www.") else host
+
+    vendor = domain(post.get("tool_url", ""))
+    others = {domain(s) for s in post.get("sources", [])} - {vendor, ""}
+    return not others
 
 
 def choose_mode(history: list[str]) -> str:
