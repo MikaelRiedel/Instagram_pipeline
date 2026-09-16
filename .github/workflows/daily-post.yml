@@ -2,9 +2,14 @@ name: Daily Instagram content
 
 on:
   schedule:
-    # 09:00 UTC = 12:00 Finnish time, two hours before the 14:00 Buffer
-    # posting slot. Cron is always UTC and does not follow Finnish DST.
-    - cron: "0 9 * * *"
+    # 05:17 UTC = 08:17 Finnish, ~5h45m before the 14:00 Buffer slot.
+    # Two deliberate choices here:
+    #  - Very early, because GitHub's scheduled runs are best-effort. The
+    #    2026-09-16 run fired 4h48m late, missing that day's posting slot.
+    #  - An odd minute, not :00, since on-the-hour schedules queue behind
+    #    everyone else's cron and are delayed the most.
+    # Cron is always UTC and does not follow Finnish DST.
+    - cron: "17 5 * * *"
   # Lets you trigger a run on demand from the Actions tab, without waiting
   # for the schedule -- useful for testing.
   workflow_dispatch: {}

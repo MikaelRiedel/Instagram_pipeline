@@ -161,7 +161,7 @@ def research_topic(client: anthropic.Anthropic, history: list[str], mode: str) -
     # which is how a "10 minute" run turned into 30 minutes and 3x the cost.
     with client.messages.stream(
         model=MODEL,
-        max_tokens=4000,
+        max_tokens=8000,
         tools=[{"type": "web_search_20260209", "name": "web_search", "max_uses": 5}],
         messages=[{
             "role": "user",
@@ -189,13 +189,48 @@ def research_topic(client: anthropic.Anthropic, history: list[str], mode: str) -
     ) as stream:
         response = stream.get_final_message()
 
-    return "".join(b.text for b in response.content if b.type == "text")
+    text = "".join(b.text for b in response.content if b.type == "text")
+    if not text.strip():
+        # Seen on 2026-09-16: the turn ended on search results with no prose,
+        # most likely the server-tool budget running out mid-loop. Report the
+        # reason rather than returning "" and letting the caller pay for a
+        # write call it can't possibly fulfil.
+        searches = sum(1 for b in response.content if b.type == "server_tool_use")
+        raise RuntimeError(
+            f"Research produced no text (stop_reason={response.stop_reason}, "
+            f"{searches} searches used). Nothing to write a post from."
+        )
+    return text
+
+
+def _structured_json(response) -> dict:
+    """Pulls the JSON out of a structured-output response.
+
+    Joins EVERY text block: a long response gets split across several, and
+    taking just the first one hands json.loads a string that stops mid-value.
+    That's exactly what broke the 2026-09-16 run.
+    """
+    if response.stop_reason == "max_tokens":
+        raise RuntimeError(
+            "Model hit max_tokens before closing the JSON -- raise max_tokens "
+            "or ask for fewer slides."
+        )
+    text = "".join(b.text for b in response.content if b.type == "text")
+    if not text.strip():
+        raise RuntimeError(f"Model returned no text at all (stop_reason={response.stop_reason}).")
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(
+            f"Model output wasn't valid JSON: {exc}\n"
+            f"Got {len(text)} chars, starting: {text[:200]!r}"
+        ) from exc
 
 
 def write_post(client: anthropic.Anthropic, research: str) -> dict:
     response = client.messages.create(
         model=MODEL,
-        max_tokens=4000,
+        max_tokens=8000,
         output_config={"format": {"type": "json_schema", "schema": POST_SCHEMA}},
         messages=[{
             "role": "user",
@@ -206,8 +241,7 @@ def write_post(client: anthropic.Anthropic, research: str) -> dict:
             ),
         }],
     )
-    text = next(b.text for b in response.content if b.type == "text")
-    return json.loads(text)
+    return _structured_json(response)
 
 
 def critique_and_revise(client: anthropic.Anthropic, draft: dict) -> dict:
@@ -215,7 +249,7 @@ def critique_and_revise(client: anthropic.Anthropic, draft: dict) -> dict:
     This forces Claude to find its own clichés/vagueness and fix them."""
     response = client.messages.create(
         model=MODEL,
-        max_tokens=4000,
+        max_tokens=8000,
         output_config={"format": {"type": "json_schema", "schema": POST_SCHEMA}},
         messages=[{
             "role": "user",
@@ -239,8 +273,7 @@ def critique_and_revise(client: anthropic.Anthropic, draft: dict) -> dict:
             ),
         }],
     )
-    text = next(b.text for b in response.content if b.type == "text")
-    return json.loads(text)
+    return _structured_json(response)
 
 
 def main() -> None:
