@@ -10,9 +10,14 @@ on:
     #    everyone else's cron and are delayed the most.
     # Cron is always UTC and does not follow Finnish DST.
     - cron: "17 5 * * *"
-  # Lets you trigger a run on demand from the Actions tab, without waiting
-  # for the schedule -- useful for testing.
-  workflow_dispatch: {}
+  # Manual runs from the Actions tab. Untick "publish" to test the whole
+  # generation step without anything reaching Buffer or Instagram.
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Queue the post in Buffer (untick for a safe test run)"
+        type: boolean
+        default: true
 
 permissions:
   contents: write  # needed so the workflow can commit/push new posts + history.json
@@ -46,7 +51,19 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: python3 generate_content.py
 
+      # Always keep the rendered slides as a downloadable artifact, so a test
+      # run (or a failed one) can be inspected without it being published.
+      - name: Save generated post
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: generated-post
+          path: posts/
+          if-no-files-found: ignore
+
       - name: Queue post in Buffer
+        # Scheduled runs always publish; manual runs only when ticked.
+        if: github.event_name == 'schedule' || inputs.publish
         env:
           BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
         run: python3 publish_to_buffer.py
