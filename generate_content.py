@@ -47,6 +47,7 @@ from pipeline_common import (
     POST_SCHEMA,
     SCRIPT_DIR,
     WRITING_RULES,
+    _structured_json,
     render_all_slides,
 )
 
@@ -202,29 +203,6 @@ def research_topic(client: anthropic.Anthropic, history: list[str], mode: str) -
         )
     return text
 
-
-def _structured_json(response) -> dict:
-    """Pulls the JSON out of a structured-output response.
-
-    Joins EVERY text block: a long response gets split across several, and
-    taking just the first one hands json.loads a string that stops mid-value.
-    That's exactly what broke the 2026-09-16 run.
-    """
-    if response.stop_reason == "max_tokens":
-        raise RuntimeError(
-            "Model hit max_tokens before closing the JSON -- raise max_tokens "
-            "or ask for fewer slides."
-        )
-    text = "".join(b.text for b in response.content if b.type == "text")
-    if not text.strip():
-        raise RuntimeError(f"Model returned no text at all (stop_reason={response.stop_reason}).")
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError as exc:
-        raise RuntimeError(
-            f"Model output wasn't valid JSON: {exc}\n"
-            f"Got {len(text)} chars, starting: {text[:200]!r}"
-        ) from exc
 
 
 def write_post(client: anthropic.Anthropic, research: str) -> dict:

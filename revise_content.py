@@ -35,6 +35,7 @@ import sys
 import anthropic
 
 from pipeline_common import (
+    _structured_json,
     MODEL,
     POST_SCHEMA,
     SCRIPT_DIR,
@@ -54,7 +55,7 @@ from pipeline_common import (
 def revise_with_feedback(client: anthropic.Anthropic, current_post: dict, feedback: str) -> dict:
     response = client.messages.create(
         model=MODEL,
-        max_tokens=4000,
+        max_tokens=8000,
         output_config={"format": {"type": "json_schema", "schema": POST_SCHEMA}},
         messages=[{
             "role": "user",
@@ -71,8 +72,7 @@ def revise_with_feedback(client: anthropic.Anthropic, current_post: dict, feedba
             ),
         }],
     )
-    text = next(b.text for b in response.content if b.type == "text")
-    return json.loads(text)
+    return _structured_json(response)
 
 
 def main() -> None:
