@@ -1,0 +1,86 @@
+{
+  "tool_name": "Fathom",
+  "tool_url": "https://fathom.video",
+  "caption": "The AI notetaker quietly beating Otter in almost every review \u2014 and barely anyone's talking about it.\n\nFathom joins your Zoom, Google Meet, or Microsoft Teams call, records it, and has a written summary ready the second the call ends. That's the easy part. The strange-in-a-good-way part: every line of that summary is timestamped. Click a single sentence and it jumps straight back into the recording and replays that exact moment. No more trying to remember what someone actually said three days later.\n\nIt also holds a conversation about your own meeting history. Ask it \"what did we agree on pricing last month?\" and it answers from the real transcript, not a guess.\n\nIt's not sneaky about being there \u2014 it shows up in the call as \"Fathom Notetaker\" so everyone can see it, and like any transcription tool it can slip a little on messy audio. That honesty is part of why it's built up over 6,000 reviews on G2 with a full 5.0 average, plus a string of independent comparisons against Otter and Fireflies.\n\nAnd this isn't just a work-call tool. Job interviews, therapy or coaching sessions, a family Zoom with a lawyer or doctor \u2014 anywhere you'd rather be present than scribbling. The free tier is genuinely generous too, not a countdown clock, which is a big reason people actually stick with it.\n\nSave this so you don't lose it. Full breakdown \u2014 link in bio.",
+  "slides": [
+    {
+      "heading": "The notetaker quietly beating Otter in every review",
+      "body": "",
+      "image_kind": "photo",
+      "image_query": "person video call laptop"
+    },
+    {
+      "heading": "You know the split-screen feeling on a call",
+      "body": "Half your brain listens, the other half scrambles to type \u2014 then you lose ten minutes turning scraps into a real summary.",
+      "image_kind": "photo",
+      "image_query": "tired person typing notes laptop"
+    },
+    {
+      "heading": "The summary is done before you even close the laptop",
+      "body": "Fathom joins the call, records it, and hands you a written summary the moment it ends. No typing, no waiting.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "Click one line. It rewinds to that exact moment.",
+      "body": "Every sentence in the summary is timestamped. Tap it and the recording jumps straight to that part of the conversation.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "Ask it what happened three meetings ago",
+      "body": "Type \"what did we agree on pricing last month?\" and it answers from the actual transcript, not a guess.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "It's honest about the one thing it can't do perfectly",
+      "body": "It shows up in the call as \"Fathom Notetaker\" for everyone to see, and messy audio can still trip up the transcript.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "It's not only for meetings",
+      "body": "A job interview, a therapy session, a family Zoom with a lawyer or doctor \u2014 anywhere you'd rather listen than take notes.",
+      "image_kind": "photo",
+      "image_query": "family video call laptop"
+    },
+    {
+      "heading": "Before: rebuilding your notes for twenty minutes. After: nothing to rebuild.",
+      "body": "The call ends, the summary already exists, and you're back to your day instead of decoding your own handwriting.",
+      "image_kind": "photo",
+      "image_query": "person closing laptop relaxed"
+    },
+    {
+      "heading": "It listens so you can actually be in the conversation",
+      "body": "Instant summaries, timestamped replays, and a chat that remembers every meeting you've ever had.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "Let it sit in on one call this week",
+      "body": "Save this post, then see what it hands you the moment that call ends.",
+      "image_kind": "graphic",
+      "image_query": ""
+    }
+  ],
+  "hashtags": [
+    "productivity",
+    "AItools",
+    "meetingnotes",
+    "notetaking",
+    "workflow",
+    "techtips",
+    "aiproductivity",
+    "remotework"
+  ],
+  "sources": [
+    "https://www.capterra.com/p/276054/Fathom/reviews/",
+    "https://screenapp.io/blog/fathom-notetaker-review",
+    "https://www.toolvetting.com/fathom-ai-review/",
+    "https://circleback.ai/compare/fathom-vs-otter-ai",
+    "https://aiunpacker.com/blog/fathom-ai-note-taker-honest-review-after-90-days-of-use",
+    "https://www.g2.com/compare/fathom-video-vs-otter-ai",
+    "https://www.useluminix.com/reports/industry-analysis/ai-meeting-notes-comparison-granola-vs-otter-vs-fireflies-vs-fathom-2026"
+  ]
+}
