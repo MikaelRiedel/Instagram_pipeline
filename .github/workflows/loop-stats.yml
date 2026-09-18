@@ -1,0 +1,35 @@
+name: Loop - stats
+
+# Nightly. Reads engagement for settled posts and may add ONE directive to
+# project/playbook.md. Markdown only: this loop never edits code.
+on:
+  schedule:
+    - cron: "43 1 * * *"   # 01:43 UTC, off the hour to avoid cron contention
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Analyse engagement
+        env:
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 scripts/loop_stats.py
+      - name: Commit playbook/log changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add project/playbook.md project/log.md
+          git diff --staged --quiet || git commit -m "stats loop: update playbook/log"
+          git pull --rebase --autostash -q || true
+          git push
