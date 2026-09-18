@@ -40,6 +40,7 @@ import sys
 from pipeline_common import (
     AUTO_PUBLISH,
     HISTORY_PATH,
+    POSTS_LOG_PATH,
     SCRIPT_DIR,
     build_caption,
     commit_and_push,
@@ -49,6 +50,7 @@ from pipeline_common import (
     get_organization_id,
     get_repo_slug,
     load_content,
+    record_published_post,
     raw_url,
 )
 
@@ -70,7 +72,7 @@ def main() -> None:
 
     owner, repo = get_repo_slug()
     branch = commit_and_push(
-        [post_dir, HISTORY_PATH], f"Add content for {post_dir.name}"
+        [post_dir, HISTORY_PATH, POSTS_LOG_PATH], f"Add content for {post_dir.name}"
     )
 
     image_urls = [raw_url(owner, repo, branch, p) for p in slide_paths]
@@ -96,6 +98,7 @@ def main() -> None:
 
     post_id = result["post"]["id"]
     (post_dir / "buffer_post_id.txt").write_text(post_id)
+    record_published_post(post_id, post_dir.name, content)
 
     print(f"\nSuccess! Post created (id: {post_id})")
     print(f"Topic: {content['tool_name']}")

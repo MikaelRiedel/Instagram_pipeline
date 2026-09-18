@@ -22,6 +22,9 @@ import imagery
 SCRIPT_DIR = Path(__file__).resolve().parent
 HISTORY_PATH = SCRIPT_DIR / "history.json"
 POSTS_DIR = SCRIPT_DIR / "posts"
+PROJECT_DIR = SCRIPT_DIR / "project"
+PLAYBOOK_PATH = PROJECT_DIR / "playbook.md"
+POSTS_LOG_PATH = PROJECT_DIR / "posts.jsonl"
 FONT_DIR = SCRIPT_DIR / "assets" / "fonts"
 
 MODEL = "claude-sonnet-5"
@@ -39,6 +42,12 @@ POST_SCHEMA = {
         "tool_name": {"type": "string"},
         "tool_url": {"type": "string"},
         "caption": {"type": "string"},
+        # Which hook shape slide 1 uses. Recorded per post so the stats loop
+        # can tell which shapes actually earn saves.
+        "hook_type": {
+            "type": "string",
+            "enum": ["direct_benefit", "named_pain", "contrarian", "curiosity_gap", "specific_number"],
+        },
         "slides": {
             "type": "array",
             "items": {
@@ -59,7 +68,7 @@ POST_SCHEMA = {
         "hashtags": {"type": "array", "items": {"type": "string"}},
         "sources": {"type": "array", "items": {"type": "string"}},
     },
-    "required": ["tool_name", "tool_url", "caption", "slides", "hashtags", "sources"],
+    "required": ["tool_name", "tool_url", "caption", "hook_type", "slides", "hashtags", "sources"],
     "additionalProperties": False,
 }
 
@@ -177,6 +186,9 @@ WRITING_RULES = (
     "Leave it as an empty string for the other kinds.\n"
     "- tool_url: the tool's official homepage, used to fetch its product screenshot. Get "
     "this right -- a wrong URL means no product imagery.\n"
+    "- hook_type: which shape slide 1 uses -- direct_benefit, named_pain, contrarian, "
+    "curiosity_gap, or specific_number. Report honestly what you actually wrote; this is "
+    "measured against results later.\n"
     "- hashtags: 5-10 relevant hashtags, no '#' symbol included.\n"
     "- sources: the URLs you used for factual claims, so a human can spot-check them. At "
     "least one should be independent of the vendor (a review, a press piece, a "
@@ -206,6 +218,71 @@ def _structured_json(response) -> dict:
             f"Got {len(text)} chars, starting: {text[:200]!r}"
         ) from exc
 
+
+
+def load_playbook_directives() -> list[str]:
+    """Reads project/playbook.md and returns the directives as plain strings.
+
+    These are INSTRUCTIONS for generation, not background reading -- the whole
+    self-improving loop hinges on them reaching the prompt. A directive is a
+    top-level "- " bullet; its indented *Reason:* line is context for humans
+    and is left out.
+    """
+    if not PLAYBOOK_PATH.exists():
+        return []
+    directives, current = [], None
+    for raw in PLAYBOOK_PATH.read_text().splitlines():
+        if raw.startswith("- "):
+            if current:
+                directives.append(" ".join(current.split()))
+            current = raw[2:]
+        elif current is not None and raw.startswith("  ") and not raw.strip().startswith("*"):
+            current += " " + raw.strip()
+        elif current and (not raw.strip() or raw.strip().startswith("*")):
+            directives.append(" ".join(current.split()))
+            current = None
+    if current:
+        directives.append(" ".join(current.split()))
+    return [d for d in directives if d]
+
+
+def playbook_prompt_block() -> str:
+    """The playbook rendered for inclusion in a generation prompt."""
+    directives = load_playbook_directives()
+    if not directives:
+        return ""
+    lines = "\n".join(f"- {d}" for d in directives)
+    return (
+        "\n\nLEARNED DIRECTIVES -- these come from measured results and review of "
+        "this account's own posts. They override general instincts and any "
+        "generic best practice you might otherwise apply. Follow every one:\n"
+        f"{lines}\n"
+    )
+
+
+def record_published_post(post_id: str, post_dir_name: str, content: dict) -> None:
+    """Appends one line to project/posts.jsonl linking a published post to the
+    directives that were in force when it was generated.
+
+    Without this link the stats loop can see that a post did well but not why,
+    and can never retire a directive that isn't pulling its weight.
+    """
+    import datetime as _dt
+
+    entry = {
+        "post_id": post_id,
+        "date": post_dir_name,
+        "recorded_at": _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
+        "tool_name": content.get("tool_name"),
+        "format": "carousel",
+        "hook_type": content.get("hook_type"),
+        "slide_count": len(content.get("slides", [])),
+        "image_kinds": [s.get("image_kind") for s in content.get("slides", [])],
+        "directives_in_force": load_playbook_directives(),
+    }
+    POSTS_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with POSTS_LOG_PATH.open("a") as fh:
+        fh.write(json.dumps(entry) + "\n")
 
 
 def build_caption(content: dict) -> str:

@@ -48,6 +48,7 @@ from pipeline_common import (
     SCRIPT_DIR,
     WRITING_RULES,
     _structured_json,
+    playbook_prompt_block,
     render_all_slides,
 )
 
@@ -218,7 +219,7 @@ def write_post(client: anthropic.Anthropic, research: str) -> dict:
             "content": (
                 "Using this research, write an Instagram carousel post that makes people "
                 "want to go try this tool:\n\n"
-                f"{research}\n\n{WRITING_RULES}"
+                f"{research}\n\n{WRITING_RULES}{playbook_prompt_block()}"
             ),
         }],
     )
@@ -248,7 +249,7 @@ def critique_and_revise(client: anthropic.Anthropic, draft: dict) -> dict:
                 "found something genuinely cool\n"
                 "Then rewrite the whole post fixing every issue -- same tool, same facts, "
                 "but substantially more desirable to read. "
-                f"{WRITING_RULES}\n"
+                f"{WRITING_RULES}{playbook_prompt_block()}\n"
                 "Return ONLY the improved, rewritten version in the schema -- not the "
                 "critique itself."
             ),

@@ -36,6 +36,7 @@ import anthropic
 
 from pipeline_common import (
     _structured_json,
+    playbook_prompt_block,
     MODEL,
     POST_SCHEMA,
     SCRIPT_DIR,
@@ -67,7 +68,7 @@ def revise_with_feedback(client: anthropic.Anthropic, current_post: dict, feedba
                 "Revise the post to directly address that feedback. Keep everything that "
                 "wasn't mentioned as close to the original as makes sense -- don't rewrite "
                 "parts that weren't flagged just for the sake of it, unless the feedback "
-                f"requires it.\n\n{WRITING_RULES}\n"
+                f"requires it.\n\n{WRITING_RULES}{playbook_prompt_block()}\n"
                 "Return ONLY the revised post in the schema."
             ),
         }],
