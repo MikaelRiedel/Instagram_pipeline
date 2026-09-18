@@ -2,6 +2,10 @@
 
 Append-only. Newest at top.
 
+## 2026-09-18 — stats loop
+Insufficient signal: 0 settled posts, 0 total reach, 0 total saves. Needs 100 reach or 3 saves before any pattern is believable.
+No directive added. Reach, not copy, is the bottleneck.
+
 ## 2026-09-18 — setup
 Phase 0-1 of the self-improving loop. Read the repo, probed Buffer for
 available metrics, created the `project/` skeleton.
