@@ -104,7 +104,15 @@ def recent_posts() -> list[dict]:
                 "hook": (data.get("slides") or [{}])[0].get("heading"),
                 "hook_type": data.get("hook_type"),
                 "caption_first_line": (data.get("caption") or "").split("\n")[0],
+                "caption_full": data.get("caption"),
+                # Include everything the post actually shipped with. Omitting a
+                # field invites the model to assume it doesn't exist: the first
+                # run claimed the pipeline produced no hashtags, because it
+                # couldn't see the eight on every post.
+                "hashtags": data.get("hashtags"),
+                "sources": data.get("sources"),
                 "slide_headings": [s.get("heading") for s in data.get("slides", [])],
+                "image_kinds": [s.get("image_kind") for s in data.get("slides", [])],
             })
     return out
 
@@ -207,7 +215,7 @@ ALREADY KNOWN AND OPEN WITH THE OWNER
 {read(PROJECT_DIR / 'open.md')}
 
 THE LAST {LOOKBACK_DAYS} DAYS OF POSTS
-{json.dumps(posts, indent=2)[:6000]}
+{json.dumps(posts, indent=2)[:12000]}
 
 ACTUAL PERFORMANCE FROM INSTAGRAM (via Buffer)
 {json.dumps(metrics, indent=2)[:3000]}
@@ -217,6 +225,10 @@ HOW POSTS ARE GENERATED (the code that would need changing)
 
 OPEN CRITIQUE ISSUES -- do not refile these, but you may build on them:
 {json.dumps(existing, indent=2)}
+
+Every field above is the ground truth of what shipped. Do not claim a feature is
+missing without checking these first -- if hashtags, sources or image kinds are
+present here, they exist.
 
 Research current practice on the open web before answering. Look for what actually
 works for accounts in this position right now, not evergreen advice. Then argue.
