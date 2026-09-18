@@ -1,0 +1,8 @@
+# Every project the morning brief walks. Adding a second is one entry.
+#
+# path: folder containing the five fixed files (goal/constraints/playbook/log/open)
+# repo: optional, only used to label where the work happens
+projects:
+  - name: Instagram AI-tools account
+    path: project
+    repo: MikaelRiedel/Instagram_pipeline
