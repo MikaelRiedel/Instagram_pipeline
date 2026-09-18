@@ -1,0 +1,38 @@
+name: Loop - critique
+
+# Daily, offset from the stats loop. Business strategy, not copy editing:
+# asks whether the right thing exists at all, and argues for changes.
+# Files GitHub issues only -- never commits code.
+on:
+  schedule:
+    - cron: "37 3 * * *"   # 03:37 UTC, two hours after the stats loop
+  workflow_dispatch: {}
+
+permissions:
+  contents: write   # appends to project/log.md
+  issues: write     # files critique issues
+
+jobs:
+  critique:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Argue
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/loop_critique.py
+      - name: Commit log
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add project/log.md
+          git diff --staged --quiet || git commit -m "critique loop: log entry"
+          git pull --rebase --autostash -q || true
+          git push
