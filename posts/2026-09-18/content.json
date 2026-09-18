@@ -1,0 +1,85 @@
+{
+  "tool_name": "Higgsfield AI",
+  "tool_url": "https://higgsfield.ai",
+  "caption": "Imagine an AI that watches your video like a brain, and tells you it won't hit \u2014 before a single stranger sees it.\n\nThat's the idea behind Higgsfield AI's newest feature, Virality Predictor, shipped back in May. Higgsfield is already behind a lot of the impossible-camera-move, explosion-transition clips filling your feed \u2014 it pulls together 30+ underlying AI video models into one-tap cinematic presets. But this feature does something different. It doesn't generate video. It grades it.\n\nFeed it a clip under 15 seconds and it maps a simulated viewer's attention, memory, and emotional response across the footage, then hands back a virality score, the exact timestamp your hook peaks, a hold rate, and a heatmap of which moments held attention and which lost it. In one tracked test, a 7,000-view video scored higher than a 2.1-million-view one \u2014 the tool is reading your specific footage, not just repeating what already went viral.\n\nIt replaces the worst part of posting: filming something, publishing blind, then refreshing the view count for two hours wondering if the first three seconds killed it. Now that guessing happens before you hit publish.\n\nThere's also a library of Viral Presets ('Red Carpet,' 'Neon City,' high-energy transitions) and Draw-to-Video, which turns a rough sketch into a full animated clip \u2014 this isn't only for people chasing ad performance, it's genuinely fun to explore on its own terms.\n\nWorth saying plainly: the 'brain' watching your video is a modeled simulation, not real audience data, so treat the score as a smart signal, not a promise. Higgsfield also built Soul Cast, a compliance tool restricting likeness uploads, after backlash over how reference images were being used \u2014 worth knowing going in.\n\nSave this so you don't lose it, and give Virality Predictor a run on your next clip before you post it blind. Full breakdown \u2014 link in bio.",
+  "slides": [
+    {
+      "heading": "This AI predicts your video's flop before you post it",
+      "body": "No filming blind, no refreshing the view count for two hours hoping the first three seconds didn't sink you.",
+      "image_kind": "photo",
+      "image_query": "person filming phone night"
+    },
+    {
+      "heading": "The two hours after posting are the worst part",
+      "body": "You publish, then refresh the view count wondering if the hook, the caption, or the timing killed it \u2014 with no way to know until it's too late.",
+      "image_kind": "photo",
+      "image_query": "phone screen view count"
+    },
+    {
+      "heading": "It watches your clip like a simulated viewer's brain",
+      "body": "Higgsfield's Virality Predictor maps attention and emotion across your footage, then hands you a score, a hold-rate graph, and a heatmap of the exact second you lost people.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "A 7,000-view clip once scored higher than a 2.1-million-view one",
+      "body": "It's not repeating what already went viral \u2014 it's reading what your specific footage does to attention, independent of what performed before.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "One honest catch worth knowing",
+      "body": "The 'brain' watching your clip is a modeled simulation, not real audience data \u2014 treat the score as a smart signal, not a guarantee.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "One tap turns raw footage into a scroll-stopping edit",
+      "body": "Viral Presets like 'Red Carpet' and 'Neon City' apply cinematic transitions instantly \u2014 no editing software or skill required.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "Sketch something on paper \u2014 watch it move",
+      "body": "Draw-to-Video turns a rough doodle or storyboard sketch into a fully animated clip, for anyone who likes making things, not just marketers.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "Fix the flop before anyone outside your camera roll sees it",
+      "body": "Instead of a stomach-drop two hours after posting, you get the score and the fix first \u2014 while it's still just you and your phone.",
+      "image_kind": "photo",
+      "image_query": "creator smiling editing laptop"
+    },
+    {
+      "heading": "The whole idea in one line",
+      "body": "Score your clip, see exactly where it loses people, fix it \u2014 all before anyone outside your camera roll ever sees it.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "Save this before your next post",
+      "body": "Try Higgsfield's Virality Predictor on your next clip before it goes live. Follow for more tools worth your time.",
+      "image_kind": "graphic",
+      "image_query": ""
+    }
+  ],
+  "hashtags": [
+    "aivideo",
+    "higgsfield",
+    "contentcreation",
+    "viralvideo",
+    "aitools",
+    "videoediting",
+    "contentcreator",
+    "techtips"
+  ],
+  "sources": [
+    "https://higgsfield.ai/apps/virality-predictor",
+    "https://quasa.io/media/higgsfield-launches-virality-predictor-an-ai-tool-that-predicts-if-your-video-will-go-viral-before-you-post-it",
+    "https://www.threads.com/@nathanmercer.openai/post/DYdS-_aEy6G/higgsfields-revealed-virality-predictor-analyzes-videos-under-seconds-and-shows",
+    "https://www.mobileappdaily.com/product-review/higgsfield-ai",
+    "https://browsing.ai/blog/higgsfield-ai-review",
+    "https://en.wikipedia.org/wiki/Higgsfield_AI"
+  ]
+}
