@@ -232,8 +232,10 @@ this business right now."""
 
     client = anthropic.Anthropic(max_retries=0, timeout=600.0)
     with client.messages.stream(
-        model=MODEL, max_tokens=8000,
-        tools=[{"type": "web_search_20260209", "name": "web_search", "max_uses": 6}],
+        # Generous: a web-search loop spends output tokens on every turn, and
+        # the final JSON has to fit in what's left. 8000 ran out mid-object.
+        model=MODEL, max_tokens=16000,
+        tools=[{"type": "web_search_20260209", "name": "web_search", "max_uses": 5}],
         output_config={"format": {"type": "json_schema", "schema": ISSUES_SCHEMA}},
         messages=[{"role": "user", "content": prompt}],
     ) as stream:
