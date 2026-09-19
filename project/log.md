@@ -2,6 +2,10 @@
 
 Append-only. Newest at top.
 
+## 2026-09-19 — critique loop
+Reviewed 4 recent posts and live metrics; filed 3 issue(s).
+Argument: This account's problem is not content quality — the captions are specific, well-sourced, and follow the playbook's own rules — it's that three carousels were published into a social graph of zero followers, zero follows, and zero engagement history, which is close to the worst possible starting condition for Instagram's test-pool distribution mechanic. Fix the cold start by hand and shift the default format toward what actually gets tested into cold audiences (video), and only then is it meaningful to iterate on hooks, saves, or affiliate mechanics.
+
 ## 2026-09-19 — stats loop
 Insufficient signal: 0 settled posts, 0 total reach, 0 total saves. Needs 100 reach or 3 saves before any pattern is believable.
 No directive added. Reach, not copy, is the bottleneck.
