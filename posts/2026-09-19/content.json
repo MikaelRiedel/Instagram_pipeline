@@ -1,0 +1,83 @@
+{
+  "tool_name": "Snipd",
+  "tool_url": "https://www.snipd.com",
+  "caption": "You can interrogate a podcast after it's over \u2014 and it actually answers you.\n\nThink about the last podcast that gave you one genuinely great line. A framework, a book title, a way of thinking about money or work that you told yourself you'd remember. Did you? Or is it sitting somewhere in a 90-minute episode you'll never scrub back through to find.\n\nSnipd is an AI podcast player (iOS and Android) built around a simple idea: listening shouldn't mean losing information. A few things worth knowing about it:\n\n\u2192 Triple-tap your headphones mid-episode and it saves the clip, the transcript, and an AI summary automatically \u2014 before you've even pulled your phone out.\n\u2192 \"Chat with Episode\" lets you type a question about something the host or guest said, days later, and it answers using the actual transcript. Not a summary of the vibe \u2014 the actual words.\n\u2192 AI-generated chapters break long episodes into topics, so you can skip straight to the 8 minutes you wanted out of 90.\n\u2192 Guest Detection tells you who's talking as they talk, so you're not pausing your walk to Google a name.\n\u2192 Everything exports to Notion, Obsidian, Readwise, or Markdown, so it lives in your notes instead of disappearing into the app.\n\nOne honest limit: it's built for English-language podcasts, and it works best as a layer on top of your existing podcast app rather than a full replacement. Reviewers who used Airr before it shut down consistently point to this as its closest successor \u2014 it's on the App Store and Google Play with 100K+ downloads already.\n\nSave this so you don't lose it. Full breakdown \u2014 link in bio.",
+  "hook_type": "curiosity_gap",
+  "slides": [
+    {
+      "heading": "You can interrogate a podcast after it's over",
+      "body": "Not a metaphor. Ask it a real question about something the host said, and it answers from the transcript.",
+      "image_kind": "photo",
+      "image_query": "person walking headphones city"
+    },
+    {
+      "heading": "Every episode has one line worth keeping",
+      "body": "And once it's over, there's no way back to it \u2014 except rewinding 40 minutes to find 12 seconds.",
+      "image_kind": "photo",
+      "image_query": "person driving listening phone"
+    },
+    {
+      "heading": "Hear something good? Triple-tap your headphones",
+      "body": "It saves the clip, the transcript, and an AI summary right then \u2014 before you've even reached for your phone.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "Ask the episode itself, days later",
+      "body": "\"Chat with Episode\" lets you type a question about the conversation and pulls the answer straight from what was actually said.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "Skip straight to the 8 minutes you wanted",
+      "body": "AI-generated chapters split a 90-minute episode into topics, so you stop scrubbing through the parts you don't care about.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "It tells you who's talking, mid-conversation",
+      "body": "Guest Detection surfaces who's speaking as the episode plays, so you're not pausing your walk to search a name.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "The honest limit",
+      "body": "It's built for English-language podcasts and works best as a layer on your existing app, not a full replacement for it.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "From half-remembered quotes to a searchable library",
+      "body": "Every clip and transcript exports straight into Notion, Obsidian, or Readwise, sitting in your notes instead of your memory.",
+      "image_kind": "photo",
+      "image_query": "notebook coffee desk morning"
+    },
+    {
+      "heading": "Save this, then triple-tap your next episode",
+      "body": "One habit change, and you stop losing what you listen to.",
+      "image_kind": "graphic",
+      "image_query": ""
+    }
+  ],
+  "hashtags": [
+    "podcasts",
+    "productivitytools",
+    "aitools",
+    "notetaking",
+    "secondbrain",
+    "learninghacks",
+    "notionworkflow",
+    "techdiscovery"
+  ],
+  "sources": [
+    "https://www.producthunt.com/products/snipd",
+    "https://www.producthunt.com/products/snipd/reviews",
+    "https://play.google.com/store/apps/details?id=ai.topicfinder.podcastdiscovery&hl=en_US",
+    "https://www.latent.space/p/snipd",
+    "https://mikehking.com/2025/10/28/snipd-podcast-app-ai-transcription-and-impressive-podcast-highlighting/",
+    "https://mwm.ai/apps/snipd-ai-podcast-player/1557206126",
+    "https://bibigpt.co/en/blog/posts/best-ai-podcast-summarizer-tools-2026",
+    "https://www.podshot.ai/compare/snipd-vs-airr",
+    "https://makeheadway.com/blog/snipd-pricing-features/"
+  ]
+}

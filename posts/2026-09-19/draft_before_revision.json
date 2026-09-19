@@ -1,0 +1,83 @@
+{
+  "tool_name": "Snipd",
+  "tool_url": "https://www.snipd.com",
+  "caption": "You can ask a podcast a question after it's over \u2014 and it actually answers.\n\nMost of us have a mental drawer of half-remembered podcast moments: the line about compound interest, the book recommendation from that one guest, the framework the host explained twice because it was that good. And most of us never find it again, because rewinding 40 minutes of audio to locate 12 seconds of insight is not something anyone actually does.\n\nSnipd is an AI podcast player (iOS and Android) built around the idea that listening shouldn't mean losing information. A few things stood out in the research:\n\n\u2192 Triple-tap your headphones mid-episode and it saves the clip, transcript, and an AI summary automatically \u2014 no notes app, no pausing, no \"I'll remember this later.\"\n\u2192 Chat with Episode lets you ask a question about something the host said after you've finished listening, and it pulls the answer straight from the transcript.\n\u2192 AI-generated chapters let you jump straight to the part of a 90-minute episode you actually care about.\n\u2192 Guest Detection surfaces who's talking automatically, so you're not pausing to Google a name.\n\u2192 Everything exports into Notion, Obsidian, Readwise, or Markdown, so it lands in whatever system you already use instead of dying in the app.\n\nOne honest catch: it's built for English-language, podcast/audio-first content, so multilingual listeners may hit rougher edges. It's also a companion layer on top of how you already listen, not a full replacement for your main podcast app.\n\nIt's not a concept app either \u2014 it's on the App Store and Google Play with a real user base (100K+ downloads, 1.9K reviews), and reviewers describe it as the direct successor to Airr after that app shut down.\n\nSave this so you don't lose it, and give it a real listen on your next commute. Full breakdown \u2014 link in bio.",
+  "hook_type": "curiosity_gap",
+  "slides": [
+    {
+      "heading": "You can ask a podcast a question after it ends",
+      "body": "Not a metaphor \u2014 an actual answer, pulled from the transcript, about something the host said an hour ago.",
+      "image_kind": "photo",
+      "image_query": "person walking headphones city"
+    },
+    {
+      "heading": "You've done this: rewind, rewind, still missed it",
+      "body": "Something great gets said mid-episode and by the time you find a pen, it's gone \u2014 or you rewind three times chasing one sentence.",
+      "image_kind": "photo",
+      "image_query": "person driving listening phone"
+    },
+    {
+      "heading": "Triple-tap your headphones. That's the whole move.",
+      "body": "It saves the clip, the transcript, and an AI summary in real time \u2014 no pausing, no notes app, no \"I'll remember it later.\"",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "Ask the episode a direct question later",
+      "body": "\"Chat with Episode\" lets you type a question about the conversation and get an answer sourced from what was actually said.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "Skip straight to the part you actually care about",
+      "body": "AI-generated chapters break each episode into topics, so a 90-minute conversation stops being one giant undifferentiated block.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "It tells you who's talking, automatically",
+      "body": "Guest Detection surfaces info on who's on the episode as you listen, so you're not stopping to search a name mid-walk.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "Where it falls short",
+      "body": "It's built for English-language audio and works best as an add-on to your existing podcast app, not a full replacement for it.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "Before: a drawer of half-remembered quotes. After: a searchable library.",
+      "body": "Every highlight, transcript, and summary exports straight into Notion, Obsidian, or Readwise \u2014 sitting in your notes instead of your memory.",
+      "image_kind": "photo",
+      "image_query": "notebook coffee desk morning"
+    },
+    {
+      "heading": "Save this, then try it on your next commute",
+      "body": "Download Snipd, triple-tap your headphones once, and see what you've been losing every time you listen.",
+      "image_kind": "graphic",
+      "image_query": ""
+    }
+  ],
+  "hashtags": [
+    "podcasts",
+    "productivitytools",
+    "aitools",
+    "notetaking",
+    "secondbrain",
+    "learninghacks",
+    "notionworkflow",
+    "techforgood"
+  ],
+  "sources": [
+    "https://www.producthunt.com/products/snipd",
+    "https://www.producthunt.com/products/snipd/reviews",
+    "https://play.google.com/store/apps/details?id=ai.topicfinder.podcastdiscovery&hl=en_US",
+    "https://www.latent.space/p/snipd",
+    "https://mikehking.com/2025/10/28/snipd-podcast-app-ai-transcription-and-impressive-podcast-highlighting/",
+    "https://mwm.ai/apps/snipd-ai-podcast-player/1557206126",
+    "https://bibigpt.co/en/blog/posts/best-ai-podcast-summarizer-tools-2026",
+    "https://www.podshot.ai/compare/snipd-vs-airr",
+    "https://makeheadway.com/blog/snipd-pricing-features/"
+  ]
+}
