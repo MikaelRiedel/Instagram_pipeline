@@ -46,7 +46,7 @@ never push to `main` except for the markdown files listed below.
 | `loop-stats` | 01:43 | `project/playbook.md`, `project/log.md` — markdown only, never code |
 | `loop-critique` | 03:37 | GitHub issues labelled `critique`, `project/log.md` |
 | `loop-build` | 04:29 | A branch and a PR. Never `main`, never a merge |
-| `portfolio-brief` | 06:11 | `briefs/`, or Google Drive when configured |
+| `portfolio-brief` | 06:11 | `briefs/` — a scheduled Claude task copies it to Drive |
 
 `project/open.md` is what needs Mikael's attention; the brief reads it, so keep
 it short and remove resolved items.

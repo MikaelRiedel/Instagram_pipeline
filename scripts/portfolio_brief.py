@@ -5,15 +5,15 @@ Walks every project in portfolio/projects.yml, reads its log.md and open.md,
 and writes one short markdown file meant to be read aloud over coffee. Not a
 dashboard: no tables, no metric dumps, no nested bullets.
 
-Delivers to Google Drive when a service-account key is configured, and
-otherwise commits to briefs/ in this repo and says so.
+Writes to briefs/ in this repo. Delivery to Google Drive is handled by a
+scheduled Claude task ("instagram-brief-to-drive") that picks the file up and
+uploads it with Mikael's own linked account -- no service account, no key.
 """
 
 from __future__ import annotations
 
 import datetime as dt
 import json
-import os
 import re
 import sys
 from pathlib import Path
@@ -26,7 +26,6 @@ from pipeline_common import MODEL, SCRIPT_DIR, _structured_json  # noqa: E402
 
 PROJECTS_FILE = SCRIPT_DIR / "portfolio" / "projects.yml"
 BRIEFS_DIR = SCRIPT_DIR / "briefs"
-DRIVE_FOLDER = "Personal Assistant/output/briefs"
 
 BRIEF_SCHEMA = {
     "type": "object",
@@ -139,37 +138,8 @@ def main() -> None:
     path.write_text(text)
     print(text)
 
-    if upload_to_drive(path, text):
-        print(f"\nDelivered to Google Drive: {DRIVE_FOLDER}/{path.name}")
-    else:
-        print(f"\nNo Drive credentials -- brief committed to {path.relative_to(SCRIPT_DIR)} instead.")
-
-
-def upload_to_drive(path: Path, text: str) -> bool:
-    """Uploads via a service account if GOOGLE_SERVICE_ACCOUNT_JSON is set.
-    Returns False (not an exception) when unconfigured, so a missing key
-    degrades to the repo fallback rather than failing the morning brief."""
-    raw = os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON")
-    folder_id = os.environ.get("GDRIVE_BRIEFS_FOLDER_ID")
-    if not raw or not folder_id:
-        return False
-    try:
-        from google.oauth2 import service_account
-        from googleapiclient.discovery import build
-        from googleapiclient.http import MediaInMemoryUpload
-
-        creds = service_account.Credentials.from_service_account_info(
-            json.loads(raw), scopes=["https://www.googleapis.com/auth/drive.file"])
-        service = build("drive", "v3", credentials=creds)
-        service.files().create(
-            body={"name": path.name, "parents": [folder_id]},
-            media_body=MediaInMemoryUpload(text.encode(), mimetype="text/markdown"),
-            fields="id",
-        ).execute()
-        return True
-    except Exception as exc:
-        print(f"(Drive upload failed: {type(exc).__name__}: {exc} -- falling back to repo)")
-        return False
+    print(f"\nWritten to {path.relative_to(SCRIPT_DIR)} -- a scheduled Claude task "
+          "copies it to Drive each morning using Mikael's own account.")
 
 
 if __name__ == "__main__":
