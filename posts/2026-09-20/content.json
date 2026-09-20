@@ -1,0 +1,82 @@
+{
+  "tool_name": "Zapier AI Agents",
+  "tool_url": "https://zapier.com/agents",
+  "caption": "You don't build automations anymore \u2014 you just describe them.\n\nFor over a decade, using Zapier meant dragging boxes around a canvas: trigger here, action there, test it, watch it break on step three, then dig through a log to figure out why. That fiddly chain-building was the whole job.\n\nIn July 2026, Zapier's AI Agents feature left beta and went fully live \u2014 and it changes what \"automation\" means for anyone who isn't technical. Instead of wiring steps together, you describe the outcome in plain English, and an agent constructs, runs, and maintains the whole multi-step workflow itself. It branches down different paths depending on what it finds, and recovers from errors instead of just stopping.\n\nIt's built on Zapier's existing catalog of 7,000+ app integrations, so it already talks to your email, calendar, spreadsheets, CRM, and social accounts \u2014 this isn't a walled-garden chatbot starting from zero. And it's not only an office tool: the same builder works for logging package-tracking emails into your notes, or rolling every starred newsletter into one weekly digest.\n\nOne honest caveat: handing an agent broad permission to act across your real accounts is a bigger trust leap than approving each step yourself, and its error recovery is only as good as the apps it's connected to. Worth testing on something low-stakes before you hand it anything sensitive.\n\nSave this so you don't lose it, and try it on one small, annoying task this week. Full breakdown \u2014 link in bio.",
+  "hook_type": "direct_benefit",
+  "slides": [
+    {
+      "heading": "Describe a task once. It builds and runs it.",
+      "body": "No boxes to drag, no steps to wire together \u2014 just say what you want to happen.",
+      "image_kind": "photo",
+      "image_query": "relaxed person laptop couch"
+    },
+    {
+      "heading": "You know the drill with automation tools.",
+      "body": "Wire a trigger to an action, test it, watch it die silently on step three, then hunt through a log to find out why.",
+      "image_kind": "photo",
+      "image_query": "frustrated person staring screen"
+    },
+    {
+      "heading": "Type a sentence. Get a working workflow.",
+      "body": "Zapier's new AI Agents read a plain-English description and construct the entire multi-step automation themselves \u2014 no visual builder required.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "It doesn't just run \u2014 it decides.",
+      "body": "The agent branches down different paths depending on what it finds, instead of following one rigid, single-track chain.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "When a step fails, it tries again on its own.",
+      "body": "It retries or reroutes instead of quietly dying \u2014 though it's only as reliable as the apps it's connected to, so start with something low-stakes.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "It already knows how to talk to your tools.",
+      "body": "Email, calendar, spreadsheets, your CRM, social accounts \u2014 it plugs into over 7,000 apps Zapier already connects to.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "It's not just for office busywork.",
+      "body": "Log a package-tracking email straight into your notes, or fold every starred newsletter into one weekly digest, automatically.",
+      "image_kind": "photo",
+      "image_query": "person phone kitchen morning"
+    },
+    {
+      "heading": "The fiddly babysitting part just disappears.",
+      "body": "What used to be build, test, fix, retest, and periodic checking becomes one sentence \u2014 the agent handles what used to break.",
+      "image_kind": "photo",
+      "image_query": "person coffee relaxed morning"
+    },
+    {
+      "heading": "Automation you describe, not one you build.",
+      "body": "One prompt in plain English becomes a multi-step workflow that runs itself and fixes its own mistakes.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "Try it on one annoying task this week.",
+      "body": "Save this post, pick one small recurring chore, and describe it to Zapier's AI Agents instead of building it by hand.",
+      "image_kind": "graphic",
+      "image_query": ""
+    }
+  ],
+  "hashtags": [
+    "zapier",
+    "aiagents",
+    "automation",
+    "productivity",
+    "aitools",
+    "futureofwork",
+    "personalproductivity",
+    "notechnical"
+  ],
+  "sources": [
+    "https://skycrumbs.com/blog/best-ai-tools-july-2026",
+    "https://zapier.com/agents"
+  ]
+}
