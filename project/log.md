@@ -2,6 +2,10 @@
 
 Append-only. Newest at top.
 
+## 2026-09-20 — critique loop
+Reviewed 5 recent posts and live metrics; filed 3 issue(s).
+Argument: This account is being run as a copywriting problem when it is actually a distribution problem with three separate causes: the format (carousels need a follower base to reach anyone, and this account has none), the audience (no social graph exists for the algorithm to test into, and nothing borrows one either), and the success metric (saves are being chased in the caption when the algorithm's real cold-start gate is DM shares). Until the format shifts toward automated video and the account either seeds or borrows a relevant audience, no amount of hook or caption polish will move reach off ~2 — the stats and critique loops are currently optimizing copy that almost nobody is structurally able to see.
+
 ## 2026-09-20 — stats loop
 Insufficient signal: 1 settled posts, 2 total reach, 0 total saves. Needs 100 reach or 3 saves before any pattern is believable.
 No directive added. Reach, not copy, is the bottleneck.
