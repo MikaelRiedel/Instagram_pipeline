@@ -117,6 +117,13 @@ def main() -> None:
     )
     brief = _structured_json(resp)
 
+    # Drop blanks before rendering. The 2026-09-19 brief shipped an empty
+    # "Needs you" bullet and an empty Happened section because the model
+    # returned empty strings and this rendered them verbatim.
+    brief["needs_you"] = [i for i in brief["needs_you"] if i.get("item", "").strip()]
+    brief["happened"] = [h for h in brief["happened"] if h.strip()]
+    brief["watching"] = [w for w in brief["watching"] if w.strip()]
+
     lines = [f"# Morning brief — {today}", ""]
     if brief["needs_you"]:
         lines.append("## Needs you")
@@ -128,7 +135,8 @@ def main() -> None:
     else:
         lines += ["## Needs you", "", "Nothing today.", ""]
 
-    lines += ["## Happened", ""] + [f"{h}\n" for h in brief["happened"]]
+    lines += ["## Happened", ""]
+    lines += [f"{h}\n" for h in brief["happened"]] or ["The loops reported nothing yesterday.\n"]
     if brief["watching"]:
         lines += ["## Watching", ""] + [f"{w}\n" for w in brief["watching"]]
 
