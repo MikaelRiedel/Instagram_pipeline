@@ -1,0 +1,88 @@
+{
+  "tool_name": "Consensus",
+  "tool_url": "https://consensus.app",
+  "caption": "Stop asking Google. Start asking science.\n\nYou know the loop: you type a health or nutrition question into Google, and what comes back is either SEO blogspam, a wellness influencer's confident guess, or a paywalled abstract you can't actually read past the first line. You never find out what the actual research says.\n\nConsensus is an AI search engine built only on peer-reviewed research \u2014 over 200 million papers, pulled from Semantic Scholar, OpenAlex, and its own crawl. Ask it something like \"does magnesium help with sleep\" or \"is remote work actually less productive,\" and it gives you a Consensus Meter: a simple bar showing how many real studies say yes, no, possibly, or mixed. No ten open tabs. No guessing who's credible.\n\nFor bigger questions, Pro Search goes further \u2014 a synthesis of the findings, a timeline of how the research has developed, the leading authors in the field, and a map of what hasn't been studied enough yet. It even breaks specific claims down into evidence strength, so you can see not just what's said but how solid it is.\n\nIt's not perfect \u2014 the meter counts how papers lean, it doesn't quality-weight them like a real meta-analysis would, and the free plan's monthly searches disappear fast. But for the daily \"wait, is that actually true\" itch, it's a different category of tool than search.\n\nSave this before you forget the name. Then next time you catch yourself about to argue about a health claim from a comments section, try Consensus instead \u2014 link in bio.",
+  "hook_type": "direct_benefit",
+  "slides": [
+    {
+      "heading": "Ask any health question. Get an answer from actual science.",
+      "body": "",
+      "image_kind": "photo",
+      "image_query": "person looking at phone curious"
+    },
+    {
+      "heading": "You Google a question, get ten contradicting takes, and no real answer",
+      "body": "Blogspam, influencer opinions, and paywalled studies you can't finish reading \u2014 every single time you try to check if something's actually true.",
+      "image_kind": "photo",
+      "image_query": "laptop frustrated search google"
+    },
+    {
+      "heading": "One bar tells you what the research actually says",
+      "body": "Type a yes/no question and the Consensus Meter shows how many real papers say Yes, No, Possibly, or Mixed \u2014 instantly, visually.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "It's reading 200 million papers so you don't have to",
+      "body": "Behind that one bar: a scan of over 200 million peer-reviewed papers, narrowed down to the roughly 20 most relevant to your question.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "Ask a bigger question, get a mini literature review back",
+      "body": "Pro Search returns a written summary, a timeline of how the research has evolved, the top researchers in the field, and the gaps nobody's studied yet.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "See exactly how strong the evidence is, not just what it says",
+      "body": "The Claims and Evidence table breaks findings down by strength and reasoning, with the actual papers linked next to each one.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "It's a lean count, not a verdict",
+      "body": "The meter shows how papers lean, not a quality-weighted analysis \u2014 and the free plan's monthly searches run out fast. Use it to start research, not end it.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "That 20-minute Google spiral becomes a 4-second search",
+      "body": "What used to be tabs, blogspam, and half-read abstracts is now one search with real citations attached.",
+      "image_kind": "photo",
+      "image_query": "relieved person closing laptop"
+    },
+    {
+      "heading": "A search engine that only answers with real research",
+      "body": "Consensus turns 'is this actually true' into a fact you can check in seconds, not an argument you have to win.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "Save this. Try it on your next 'wait, is that true' moment",
+      "body": "Search a question you've always wondered about \u2014 sleep, supplements, productivity \u2014 and see what the papers actually say.",
+      "image_kind": "graphic",
+      "image_query": ""
+    }
+  ],
+  "hashtags": [
+    "consensusapp",
+    "aitools",
+    "researchtools",
+    "sciencecommunication",
+    "productivityhacks",
+    "studytips",
+    "evidencebased",
+    "aiforeveryday",
+    "techdiscovery"
+  ],
+  "sources": [
+    "https://help.consensus.app/en/articles/10069920-the-consensus-meter",
+    "https://casrai.org/guides/consensus-ai-search-engine-guide",
+    "https://effortlessacademic.com/consensus-ai-review-for-literature-reviews/",
+    "https://guides.library.oregonstate.edu/consensus",
+    "https://www.bentley.edu/library/in-the-know/what-is-consensus-ai",
+    "https://uk.trustpilot.com/review/consensus.app",
+    "https://www.producthunt.com/products/consensus-2/reviews"
+  ]
+}

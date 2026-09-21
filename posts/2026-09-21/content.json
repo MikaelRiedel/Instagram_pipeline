@@ -1,0 +1,88 @@
+{
+  "tool_name": "Consensus",
+  "tool_url": "https://consensus.app",
+  "caption": "You don't need ten tabs open to know if something's actually true.\n\nMost health or productivity questions turn into the same spiral: a search, a wall of contradicting blog posts, a wellness account with strong opinions and no sources, and one paywalled study you can't finish reading. You close the tabs no smarter than when you opened them.\n\nConsensus is a search engine that only answers using peer-reviewed research \u2014 it scans over 200 million papers from places like Semantic Scholar and OpenAlex. Ask it something like \"does magnesium help with sleep\" and instead of ten opinions, you get a single bar: a Consensus Meter showing how many real studies say yes, no, or mixed.\n\nAsk a bigger question and Pro Search goes further \u2014 it writes a plain summary of what's known, shows a timeline of how the research has shifted over the years, names the scientists actually leading the field, and points out what hasn't been studied enough yet. There's also a claims table that rates how strong each individual finding is, with the paper linked right beside it.\n\nOne honest catch: the meter counts which way studies lean, not how rigorous each one is \u2014 so treat it as where research starts, not where an argument ends.\n\nStill, the next time you catch yourself mid-argument in a comments section about whether something is \"actually\" backed by science, this is a genuinely different way to check than typing it into Google.\n\nSave this so you don't lose it. Try Consensus on the next thing you've always wondered about \u2014 full breakdown, link in bio.",
+  "hook_type": "named_pain",
+  "slides": [
+    {
+      "heading": "You don't need ten tabs to check if something's true",
+      "body": "",
+      "image_kind": "photo",
+      "image_query": "person scrolling phone confused"
+    },
+    {
+      "heading": "Every health or productivity question turns into a spiral",
+      "body": "One search becomes an hour of contradicting blog posts and paywalled studies you can never finish reading.",
+      "image_kind": "photo",
+      "image_query": "laptop open late night"
+    },
+    {
+      "heading": "Ask a yes/no question and watch the science vote",
+      "body": "Type something like \"does magnesium help sleep\" and a single bar shows how many real studies say yes, no, or mixed.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "Behind that bar, it already read 200 million papers",
+      "body": "It scans over 200 million peer-reviewed studies pulled from sources like Semantic Scholar and OpenAlex, then narrows to the ones that actually answer your question.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "See the whole shape of the research, not just an answer",
+      "body": "Ask a bigger question and it maps the timeline of the research, the scientists leading it, and the questions nobody's answered yet.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "See exactly how strong each claim's evidence is",
+      "body": "Every finding gets rated by strength, with the actual paper linked right beside it \u2014 so you know if it's solid or shaky.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "One honest catch worth knowing",
+      "body": "It counts which way studies lean, not how rigorous each one is \u2014 a starting point for research, not a final verdict.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "That whole rabbit hole now takes one search",
+      "body": "The tabs, the blog spam, the half-read abstracts \u2014 replaced by one answer with real citations attached.",
+      "image_kind": "photo",
+      "image_query": "relieved person closing laptop"
+    },
+    {
+      "heading": "A search engine that only answers with real evidence",
+      "body": "It turns \"wait, is that actually true\" into something you can check in seconds instead of an argument you have to win.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "Save this. Try it on your next debate",
+      "body": "Search something you've always wondered about \u2014 sleep, supplements, productivity \u2014 and see what the papers actually say.",
+      "image_kind": "graphic",
+      "image_query": ""
+    }
+  ],
+  "hashtags": [
+    "consensusapp",
+    "aitools",
+    "researchtools",
+    "sciencecommunication",
+    "evidencebased",
+    "productivitytools",
+    "studytips",
+    "aiforeveryday",
+    "techdiscovery"
+  ],
+  "sources": [
+    "https://help.consensus.app/en/articles/10069920-the-consensus-meter",
+    "https://casrai.org/guides/consensus-ai-search-engine-guide",
+    "https://effortlessacademic.com/consensus-ai-review-for-literature-reviews/",
+    "https://guides.library.oregonstate.edu/consensus",
+    "https://www.bentley.edu/library/in-the-know/what-is-consensus-ai",
+    "https://uk.trustpilot.com/review/consensus.app",
+    "https://www.producthunt.com/products/consensus-2/reviews"
+  ]
+}
