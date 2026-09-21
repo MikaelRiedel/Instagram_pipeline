@@ -63,6 +63,11 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Claude has NO arbitrary Bash by default. The first run spent $0.42
+          # over 17 turns, hit 9 permission denials and produced nothing: no
+          # branch, no PR, no comment, while the job reported success.
+          claude_args: |
+            --allowedTools "Bash(git:*),Bash(gh:*),Bash(python3:*),Bash(ls:*),Bash(cat:*),Bash(grep:*),Bash(mkdir:*),Edit,Write,Read,Glob,Grep"
           prompt: |
             Implement ONE issue in this repository, then open a pull request.
 
