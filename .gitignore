@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 .DS_Store
 graphify-out/
+# Rendered Reels (scripts/make_reel.py). Regenerate them, don't commit them.
+*.mp4
