@@ -4,9 +4,9 @@ name: Loop - build
 # a branch, and opens a PR. One issue per run.
 #
 # It never touches main and it never merges. Mikael is the merge gate.
+# Manual only for now. The first real run cost $2.10 on Opus and still didn't
+# open the PR, so this doesn't fire unattended until both are fixed.
 on:
-  schedule:
-    - cron: "29 4 * * *"   # 04:29 UTC, after the critique loop has filed issues
   workflow_dispatch:
     inputs:
       issue:
@@ -67,6 +67,8 @@ jobs:
           # over 17 turns, hit 9 permission denials and produced nothing: no
           # branch, no PR, no comment, while the job reported success.
           claude_args: |
+            --model claude-sonnet-5
+            --max-turns 25
             --allowedTools "Bash(git:*),Bash(gh:*),Bash(python3:*),Bash(ls:*),Bash(cat:*),Bash(grep:*),Bash(mkdir:*),Edit,Write,Read,Glob,Grep"
           prompt: |
             Implement ONE issue in this repository, then open a pull request.
