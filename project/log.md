@@ -2,6 +2,10 @@
 
 Append-only. Newest at top.
 
+## 2026-09-21 — critique loop
+Reviewed 6 recent posts and live metrics; filed 3 issue(s).
+Argument: The pipeline is a well-built copy-and-design engine solving a problem this business doesn't currently have — copy quality — while the actual problem is that there is no distribution infrastructure at all: no seeded audience, a format (static carousel) that's structurally capped for cold accounts, and directives tuned for saves when the account hasn't yet earned the audience saves would compound. Nothing the pipeline generates can move reach off ~2 until a human manually creates a first audience and the default output format shifts toward video; until then, every hour spent tightening hooks or hashtags is optimizing copy nobody will ever see.
+
 ## 2026-09-21 — stats loop
 Insufficient signal: 2 settled posts, 4 total reach, 0 total saves. Needs 100 reach or 3 saves before any pattern is believable.
 No directive added. Reach, not copy, is the bottleneck.
