@@ -193,6 +193,16 @@ def main() -> None:
     metrics = live_metrics()
     existing = open_critique_issues()
 
+    # A backlog nobody has built yet does not need more ideas thrown at it.
+    if len(existing) >= 6:
+        print(f"{len(existing)} critique issues already open -- filing nothing.")
+        append_log(
+            f"## {dt.date.today().isoformat()} — critique loop\n"
+            f"Skipped: {len(existing)} critique issues already open and unbuilt. "
+            f"More ideas don't help until the backlog moves."
+        )
+        return
+
     prompt = f"""You are the strategist for a small Instagram business, and you are
 expected to become genuinely expert at growing this kind of account. You are not a
 copy editor. Your job is to work out what this business should DO next -- which may
@@ -223,8 +233,17 @@ ACTUAL PERFORMANCE FROM INSTAGRAM (via Buffer)
 HOW POSTS ARE GENERATED (the code that would need changing)
 {read(SCRIPT_DIR / 'generate_content.py', 7000)}
 
-OPEN CRITIQUE ISSUES -- do not refile these, but you may build on them:
+OPEN CRITIQUE ISSUES -- {len(existing)} of them:
 {json.dumps(existing, indent=2)}
+
+These are the live backlog. If your idea is the same underlying complaint as one of
+them, it IS a duplicate even if you word it differently -- "carousels are the wrong
+format" and "default to vertical video" are the same issue. Do not refile it. Filing
+a reworded duplicate is worse than filing nothing: it buries the backlog and the
+build loop works oldest-first, so duplicates never get built anyway.
+
+If everything you would say is already open, return zero issues and say so in
+overall_argument. That is a good outcome, not a failure.
 
 Every field above is the ground truth of what shipped. Do not claim a feature is
 missing without checking these first -- if hashtags, sources or image kinds are

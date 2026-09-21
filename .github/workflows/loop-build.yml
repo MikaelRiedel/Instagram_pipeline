@@ -39,8 +39,11 @@ jobs:
           else
             # Highest priority = oldest open issue carrying either label, since
             # the critique loop already files them in impact order.
-            NUM=$(gh issue list --label critique --label improvement \
-                    --state open --limit 20 --json number,createdAt \
+            # --search with a comma-separated label list means OR. Two --label
+            # flags would mean AND, which matched nothing for three days while
+            # the job still reported success.
+            NUM=$(gh issue list --search "is:open label:critique,improvement" \
+                    --limit 30 --json number,createdAt \
                     --jq 'sort_by(.createdAt) | .[0].number // empty')
           fi
           if [ -z "$NUM" ]; then
