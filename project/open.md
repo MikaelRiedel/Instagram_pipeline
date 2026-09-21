@@ -17,6 +17,14 @@ small accounts.
 **If ignored:** the stats loop has nothing to learn from, the critique loop
 optimises copy nobody reads, and the account stays at reach ~2 indefinitely.
 
+**Waiting on you (Reels half of this):** `scripts/make_reel.py` now renders any
+existing post's slides into a vertical MP4 with no editing —
+`python3 scripts/make_reel.py` (needs ffmpeg) and watch the result. Actually
+posting one needs two things a loop may not decide: a one-time edit to
+`publish_to_buffer.py` so it can send video, and a call on audio (silent, or a
+licensed track, or added by hand in the app — Instagram's own library only
+works in-app).
+
 ## 2. The bio link goes nowhere
 
 Every post ends with "link in bio". There is no bio link.
