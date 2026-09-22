@@ -1,0 +1,83 @@
+{
+  "tool_name": "Mistral Vibe",
+  "tool_url": "https://mistral.ai/products/vibe/",
+  "caption": "Give it one task. Walk away. It keeps working.\n\nIn May 2026, Mistral quietly turned its chatbot Le Chat into something else entirely: Mistral Vibe, an AI chat and coding agent built for what it calls \"long-horizon work.\"\n\nThe difference sounds small until you picture your actual week. Normally, getting AI to help with anything multi-step means chaining prompts one at a time \u2014 write this function, now fix this error, now add this feature, now write the test. Every step needs a new message.\n\nVibe is built to take the whole job in one go. You hand it an open-ended task and it works through the steps itself, checking back with you instead of waiting on your next instruction.\n\nIt's not starting from zero either. It inherits Le Chat's existing strengths \u2014 a fast, multilingual assistant with web search, document and image handling, and (since September 2025) memory of your past conversations baked in.\n\nWorth saying plainly: this shipped in May 2026, so independent reviews are still thin. Most of what's public right now comes from Mistral itself, not a deep bench of outside testing. That means early adopters are a little ahead of the reviews \u2014 which is also exactly why it's worth being early.\n\nSave this so you don't lose it, and try handing Vibe something you'd normally break into ten separate prompts this week. Full breakdown \u2014 link in bio.",
+  "hook_type": "direct_benefit",
+  "slides": [
+    {
+      "heading": "Give it one task. It keeps working while you don't.",
+      "body": "Mistral's chat app just became an agent built for long jobs, not quick answers.",
+      "image_kind": "photo",
+      "image_query": "person walking away laptop open"
+    },
+    {
+      "heading": "The old way: one prompt per tiny step",
+      "body": "Write this function. Now fix this error. Now add this feature. Now write the test. One message at a time, forever.",
+      "image_kind": "photo",
+      "image_query": "tired person typing computer night"
+    },
+    {
+      "heading": "It works through the whole task, not just one turn",
+      "body": "Hand Vibe an open-ended coding project and it works through the steps on its own, checking back with you instead of waiting for your next prompt.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "This is Le Chat's new agent mode, live",
+      "body": "The interface that used to be Le Chat is now Mistral Vibe \u2014 same fast, multilingual assistant, now built to run multi-step work in the background.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "It already remembers your past conversations",
+      "body": "Vibe carries over Le Chat's memory feature \u2014 ask it something you discussed weeks ago and it recalls the context, no re-explaining required.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "It searches the web and reads your files too",
+      "body": "Drop in a document or image, or let it pull live web results \u2014 all inside the same chat, no separate tools needed.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "It's brand new \u2014 reviews haven't caught up yet",
+      "body": "This agent layer shipped in May 2026. Most detail so far comes straight from Mistral, not independent testers \u2014 early users are ahead of the reviews.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "One task in, finished work out",
+      "body": "Instead of five separate messages to build, debug, and test a feature, you send one and come back to progress instead of a blank chat box.",
+      "image_kind": "photo",
+      "image_query": "relaxed person coffee laptop finished"
+    },
+    {
+      "heading": "Chat that answers vs. an agent that works",
+      "body": "Mistral Vibe is Le Chat's replacement \u2014 built to take on the whole task, not just the next question.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "Try it on your next multi-step task",
+      "body": "Save this, then hand Vibe something you'd normally break into ten prompts. See what comes back.",
+      "image_kind": "graphic",
+      "image_query": ""
+    }
+  ],
+  "hashtags": [
+    "mistralai",
+    "aiagent",
+    "aitools",
+    "productivity",
+    "artificialintelligence",
+    "aiassistant",
+    "technews",
+    "futureofwork"
+  ],
+  "sources": [
+    "https://mistral.ai/products/vibe/",
+    "https://mistral.ai/news/vibe-agent/",
+    "https://en.wikipedia.org/wiki/Mistral_Vibe"
+  ]
+}

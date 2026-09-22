@@ -1,0 +1,77 @@
+{
+  "tool_name": "Mistral Vibe",
+  "tool_url": "https://mistral.ai/products/vibe/",
+  "caption": "Send one message. Get back finished work.\n\nIn May 2026, Mistral turned its chatbot Le Chat into something built for a different kind of job: Mistral Vibe, an AI chat and coding agent designed to handle open-ended, multi-step tasks in one go.\n\nHere's the part that actually matters. Normally, getting AI to help with anything bigger than a quick answer means chaining prompts one at a time \u2014 write this function, now fix this error, now add this feature, now write the test. A new message for every step.\n\nVibe is built to skip that. You hand it one open-ended task and it works through the steps itself, checking back in with you instead of waiting on your next instruction.\n\nIt's not starting from scratch either. It keeps Le Chat's existing strengths \u2014 a fast, multilingual assistant with web search, document and image handling, and (since September 2025) memory that recalls your past conversations without you re-explaining anything.\n\nWorth saying plainly: this shipped in May 2026, so independent reviews are still thin. Most of what's public right now comes from Mistral itself, not a deep bench of outside testing. That means early users are a little ahead of the reviews \u2014 which is also exactly why it's worth trying now.\n\nSave this so you don't lose it, and this week, hand Vibe something you'd normally break into ten separate prompts. Full breakdown \u2014 link in bio.",
+  "hook_type": "direct_benefit",
+  "slides": [
+    {
+      "heading": "Send one message. Get back finished work.",
+      "body": "Mistral's chat app can now run a multi-step job on its own while you do something else entirely.",
+      "image_kind": "photo",
+      "image_query": "person walking away laptop open"
+    },
+    {
+      "heading": "The tedious way most AI chats work",
+      "body": "Write this function. Now fix the error. Now add the feature. Now write the test \u2014 one message at a time, forever.",
+      "image_kind": "photo",
+      "image_query": "tired person typing computer night"
+    },
+    {
+      "heading": "Give it one open-ended job, not ten small ones",
+      "body": "Hand Vibe a full coding project and it works through each step on its own, checking in with you instead of waiting for your next message.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "Watch it plan, code, and self-correct",
+      "body": "The chat window that used to be Le Chat now shows Vibe reasoning through a task step by step, live, right in front of you.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "Ask about a chat from three weeks ago",
+      "body": "Vibe carries over Le Chat's memory \u2014 it recalls context from past conversations automatically, so you never have to re-explain what you already told it.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "It reads your files and the live web",
+      "body": "Drop in a document or a photo, or let it pull real-time web results \u2014 all inside the same conversation, no extra tool required.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "The honest catch: it's brand new",
+      "body": "Vibe shipped in May 2026, so most of what's known comes straight from Mistral, not independent testers. Early users are ahead of the reviews here.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "Five prompts become one",
+      "body": "Building, debugging, and testing a feature used to take a back-and-forth chain of messages. Now it's one instruction and a finished result waiting for you.",
+      "image_kind": "photo",
+      "image_query": "relaxed person coffee laptop finished"
+    },
+    {
+      "heading": "Save this, then try it on something messy",
+      "body": "Pick the multi-step task you'd normally break into ten prompts and hand the whole thing to Vibe this week.",
+      "image_kind": "graphic",
+      "image_query": ""
+    }
+  ],
+  "hashtags": [
+    "mistralai",
+    "aiagent",
+    "aitools",
+    "productivity",
+    "artificialintelligence",
+    "aiassistant",
+    "technews",
+    "futureofwork"
+  ],
+  "sources": [
+    "https://mistral.ai/products/vibe/",
+    "https://mistral.ai/news/vibe-agent/",
+    "https://en.wikipedia.org/wiki/Mistral_Vibe"
+  ]
+}
