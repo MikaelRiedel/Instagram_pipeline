@@ -2,6 +2,10 @@
 
 Append-only. Newest at top.
 
+## 2026-09-22 — critique loop
+Reviewed 7 recent posts and live metrics; filed 3 issue(s).
+Argument: The account isn't stuck at reach ~2 because of copy or even format alone -- it's choosing topics (deliberately obscure, zero-search-volume tools) and a content shape (single-tool narrative) that guarantee it can't be found on the two discovery surfaces that don't require an existing audience: Search and hashtag/topic matching. Fix what the posts are about and how they're structured to match actual demand and actual save behavior, and treat unused metadata like alt text as free distribution, before spending more effort on video production or copy polish.
+
 ## 2026-09-22 — stats loop
 Insufficient signal: 3 settled posts, 5 total reach, 0 total saves. Needs 100 reach or 3 saves before any pattern is believable.
 No directive added. Reach, not copy, is the bottleneck.
