@@ -68,7 +68,7 @@ jobs:
           # branch, no PR, no comment, while the job reported success.
           claude_args: |
             --model claude-sonnet-5
-            --max-turns 25
+            --max-turns 40
             --allowedTools "Bash(git:*),Bash(gh:*),Bash(python3:*),Bash(ls:*),Bash(cat:*),Bash(grep:*),Bash(mkdir:*),Edit,Write,Read,Glob,Grep"
           prompt: |
             Implement ONE issue in this repository, then open a pull request.
