@@ -1,0 +1,88 @@
+{
+  "tool_name": "Krisp",
+  "tool_url": "https://krisp.ai",
+  "caption": "The tool that clears up thick accents in real time \u2014 for the listener, not the speaker.\n\nKrisp is the AI layer that sits quietly between your mic and speakers and whatever call app you're using \u2014 Zoom, Meet, Teams, Discord, even regular phone calls. It strips out the small daily friction of calls: the typing noise, the street sounds, the person yelling in the next room, the moment you have to ask \"sorry, can you repeat that?\"\n\nIt just shipped something genuinely new: real-time, listener-side Accent Conversion. The speaker's voice is untouched \u2014 nothing is changed on their end. On your end, their voice is rendered clearer and more neutral, processed entirely on your own device. It's a deliberate design choice to sidestep the real criticism that accent-modification tech pressures people to erase how they sound \u2014 here, only the listener's experience changes. SiliconANGLE covered the launch, and there are hands-on reviews of people testing it on their own calls.\n\nBeyond that headline feature, Krisp also quietly handles noise cancellation, cancels out other people's voices near you (not just background hum), and runs an AI meeting assistant that transcribes and summarizes calls with no bot joining, no plugin, formatted to the type of meeting you were in \u2014 standup, one-on-one, discovery call.\n\nWorth knowing: Accent Conversion currently covers a limited set of accents, with more promised over time, and it's strongest on desktop right now. It's an early slice of a bigger idea, not a universal fix yet.\n\nKrisp's beta hit #1 on Product Hunt and top 3 on Hacker News, and independent reviewers keep landing on the same verdict: it does the unglamorous basics \u2014 noise removal, transcription, notes \u2014 really well.\n\nSave this so you don't lose it. Full breakdown \u2014 link in bio.",
+  "hook_type": "curiosity_gap",
+  "slides": [
+    {
+      "heading": "The tool that clears up thick accents in real time",
+      "body": "Not for the speaker \u2014 for you, the listener. And it's already shipping.",
+      "image_kind": "photo",
+      "image_query": "person headphones video call laptop"
+    },
+    {
+      "heading": "Every call has the same small tax on your attention",
+      "body": "Background noise, someone talking over a bad connection, straining to parse an accent, then writing up notes after.",
+      "image_kind": "photo",
+      "image_query": "noisy open office video call"
+    },
+    {
+      "heading": "It mutes the room, not just the mic",
+      "body": "Krisp's noise cancellation filters out typing, traffic, and chatter so only your voice comes through.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "It even cancels out other people talking near you",
+      "body": "Not just hums and clicks \u2014 actual competing voices in the room, so the call doesn't get confused mid-conversation.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "It writes the meeting up before you've closed your laptop",
+      "body": "No bot joins the call. It transcribes and summarizes automatically, with action items and templates matched to the meeting type.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "It can make a thick accent easier to hear \u2014 instantly",
+      "body": "On-device, listener-side only. The speaker sounds exactly the same to everyone else; only your ears get the clearer version.",
+      "image_kind": "photo",
+      "image_query": "woman smiling listening headphones call"
+    },
+    {
+      "heading": "It's early, and Krisp says so",
+      "body": "Accent Conversion only covers a limited set of accents so far, and works best on desktop, not mobile yet.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "The call that used to end in confusion now just ends",
+      "body": "Less noise, less repeating yourself, less mishearing \u2014 and a summary waiting for you instead of a blank notes doc.",
+      "image_kind": "photo",
+      "image_query": "relaxed person closing laptop"
+    },
+    {
+      "heading": "One quiet layer, three annoyances gone",
+      "body": "Noise, mishearing, and post-call note-taking \u2014 handled in the background, on any call app you already use.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "Try it on your next call this week",
+      "body": "Save this post, install Krisp, and see what your calls sound like with the noise turned off.",
+      "image_kind": "graphic",
+      "image_query": ""
+    }
+  ],
+  "hashtags": [
+    "productivitytools",
+    "AItools",
+    "remotework",
+    "videocalls",
+    "worksmarter",
+    "techdiscovery",
+    "noisecancellation",
+    "meetingnotes"
+  ],
+  "sources": [
+    "https://siliconangle.com/2026/03/03/krisp-launches-listener-side-real-time-accent-conversion/",
+    "https://krisp.ai/noise-cancellation/",
+    "https://krisp.ai/ai-accent-conversion/listener/",
+    "https://www.producthunt.com/products/krisp",
+    "https://daveswift.com/krisp/",
+    "https://www.bluedothq.com/blog/krisp-ai-review",
+    "https://workgpt.com/en/app-reviews/krisp",
+    "https://krisp.ai/blog/public-beta-launch-product-hunt-hacker-news/"
+  ]
+}
