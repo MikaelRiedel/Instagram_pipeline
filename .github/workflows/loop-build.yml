@@ -98,7 +98,9 @@ jobs:
       # The agent pushed a branch but never opened the PR on its first real
       # run. Rather than rely on it remembering, the workflow guarantees it.
       - name: Open the PR if the agent didn't
-        if: steps.pick.outputs.found == 'true'
+        # always(): the agent hitting its turn cap is a failure, but it may
+        # already have pushed a usable branch. Surface the work either way.
+        if: always() && steps.pick.outputs.found == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NUM: ${{ steps.pick.outputs.number }}
