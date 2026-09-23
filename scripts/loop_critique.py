@@ -39,7 +39,7 @@ from pipeline_common import (  # noqa: E402
 )
 
 LOG_PATH = PROJECT_DIR / "log.md"
-MAX_ISSUES = 3
+MAX_ISSUES = 1  # matches the build loop's one-per-day rate; 3 in / 1 out just grew a backlog
 LOOKBACK_DAYS = 14
 
 METRICS_QUERY = """
@@ -252,8 +252,8 @@ present here, they exist.
 Research current practice on the open web before answering. Look for what actually
 works for accounts in this position right now, not evergreen advice. Then argue.
 
-Return at most {MAX_ISSUES} issues, ordered by expected impact per hour of work,
-highest first. Fewer is better than padding. Each must be concrete enough to act on
+Return at most {MAX_ISSUES} issue -- your single best one, the highest expected
+impact per hour of work. Returning none is fine if nothing clears the bar. Each must be concrete enough to act on
 tomorrow. 'where' should name the file and function when code is involved, or
 'strategy - no code' when it isn't. Judgement beats percentages: "your hooks are all
 the same shape" is more useful than a statistic.

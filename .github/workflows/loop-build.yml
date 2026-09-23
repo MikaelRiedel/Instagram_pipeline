@@ -4,9 +4,9 @@ name: Loop - build
 # a branch, and opens a PR. One issue per run.
 #
 # It never touches main and it never merges. Mikael is the merge gate.
-# Manual only for now. The first real run cost $2.10 on Opus and still didn't
-# open the PR, so this doesn't fire unattended until both are fixed.
 on:
+  schedule:
+    - cron: "29 4 * * *"   # 04:29 UTC, after the critique loop has filed issues
   workflow_dispatch:
     inputs:
       issue:
@@ -94,3 +94,37 @@ jobs:
             The PR description must state: what changed, that it closes issue
             #${{ steps.pick.outputs.number }}, and how Mikael could tell whether it
             actually worked.
+
+      # The agent pushed a branch but never opened the PR on its first real
+      # run. Rather than rely on it remembering, the workflow guarantees it.
+      - name: Open the PR if the agent didn't
+        if: steps.pick.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NUM: ${{ steps.pick.outputs.number }}
+        run: |
+          BRANCH="build-loop/issue-$NUM"
+          if ! git fetch origin "$BRANCH" 2>/dev/null; then
+            echo "No branch pushed - the agent likely asked for clarification instead."
+            exit 0
+          fi
+          if [ -n "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')" ]; then
+            echo "PR already open."
+            exit 0
+          fi
+          if [ -z "$(git log --oneline "origin/main..origin/$BRANCH")" ]; then
+            echo "Branch has no commits ahead of main. Nothing to open."
+            exit 0
+          fi
+          {
+            echo "Closes #$NUM"
+            echo
+            echo "Opened by the build loop. Commits on this branch:"
+            echo
+            git log --pretty='- %s' "origin/main..origin/$BRANCH"
+            echo
+            echo "Review the diff before merging - this was written unattended."
+          } > /tmp/pr-body.md
+          gh pr create --base main --head "$BRANCH" \
+            --title "$(git log -1 --pretty=%s "origin/$BRANCH")" \
+            --body-file /tmp/pr-body.md
