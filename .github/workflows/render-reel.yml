@@ -1,0 +1,35 @@
+name: Render a Reel
+
+# Manual. Renders an existing post's slides to a vertical MP4 and uploads it
+# as an artifact. Runs here rather than locally because GitHub's runners
+# already ship ffmpeg. Publishes nothing.
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Post date to render (blank = newest)"
+        required: false
+        type: string
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Render
+        run: |
+          ffmpeg -version | head -1
+          if [ -n "${{ inputs.date }}" ]; then
+            python3 scripts/make_reel.py --date "${{ inputs.date }}"
+          else
+            python3 scripts/make_reel.py
+          fi
+      - uses: actions/upload-artifact@v7
+        with:
+          name: reel
+          path: posts/**/reel.mp4
+          if-no-files-found: error
