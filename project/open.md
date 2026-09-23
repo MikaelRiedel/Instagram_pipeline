@@ -25,7 +25,20 @@ posting one needs two things a loop may not decide: a one-time edit to
 licensed track, or added by hand in the app — Instagram's own library only
 works in-app).
 
-## 2. The bio link goes nowhere
+## 2. Decide whether Reels become the default format
+
+`scripts/make_reel.py` (merged in #13) turns a post's slides into a vertical
+MP4 with zoom and crossfades. It is not wired into anything, on purpose.
+
+**Recommendation:** run `python3 scripts/make_reel.py` and watch the result.
+If it looks postable, say so and the switch gets built. If it looks cheap,
+say that too -- it means automated Reels need real work, not a slideshow,
+and a generated hook clip (~EUR 6/month) is the next thing to try.
+
+**If ignored:** the highest-reach format stays unused while reach sits at 2,
+and the critique loop keeps filing the same complaint.
+
+## 3. The bio link goes nowhere
 
 Every post ends with "link in bio". There is no bio link.
 
@@ -35,7 +48,7 @@ with plain non-affiliate links for now. ~15 minutes.
 **If ignored:** every post drives traffic to a dead end, and the CTA on all
 future posts is wasted.
 
-## 3. No affiliate programs joined
+## 4. No affiliate programs joined
 
 `HAS_AFFILIATE_LINKS = False`, so posts correctly avoid claiming an affiliate
 relationship. There is also therefore no revenue path.
@@ -45,7 +58,7 @@ Flow, Otter) and apply.
 
 **If ignored:** the account can grow but cannot earn.
 
-## 4. Scheduled runs fire hours late
+## 5. Scheduled runs fire hours late
 
 Cron is set to 05:17 UTC; recent runs started 09:44 and 09:58 UTC. Still ahead
 of the 14:00 Finnish posting slot, but the margin is being eaten, and three
