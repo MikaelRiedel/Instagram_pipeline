@@ -2,6 +2,9 @@
 
 Append-only. Newest at top.
 
+## 2026-09-23 — critique loop
+Skipped: 6 critique issues already open and unbuilt. More ideas don't help until the backlog moves.
+
 ## 2026-09-23 — stats loop
 Insufficient signal: 4 settled posts, 6 total reach, 0 total saves. Needs 100 reach or 3 saves before any pattern is believable.
 No directive added. Reach, not copy, is the bottleneck.
