@@ -49,6 +49,7 @@ from pipeline_common import (
     WRITING_RULES,
     _structured_json,
     playbook_prompt_block,
+    strip_false_affiliate_claim,
     render_all_slides,
 )
 
@@ -300,6 +301,10 @@ def main() -> None:
 
     print("Critiquing and rewriting for quality...")
     post = critique_and_revise(client, draft)
+
+    if strip_false_affiliate_claim(post):
+        print("\n/!\\ Removed an invented affiliate disclosure from the caption -- "
+              "no affiliate programs are joined, so the claim would have been false.")
 
     if sources_look_vendor_only(post):
         print(

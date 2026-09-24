@@ -285,6 +285,27 @@ def record_published_post(post_id: str, post_dir_name: str, content: dict) -> No
         fh.write(json.dumps(entry) + "\n")
 
 
+def strip_false_affiliate_claim(content: dict) -> bool:
+    """Removes any affiliate disclosure from the caption when no affiliate
+    relationship exists. Returns True if something was stripped.
+
+    The prompt already forbids this, but a prompt is not a guarantee: the
+    2026-09-14 post invented "This post contains affiliate links" anyway,
+    because that sentence is everywhere in the training data for captions of
+    this shape. A false material-connection claim is a compliance problem in
+    its own right, and once real programs are joined this same code has to get
+    the distinction right every single day. Cheap deterministic check.
+    """
+    if HAS_AFFILIATE_LINKS:
+        return False
+    caption = content.get("caption", "")
+    kept = [ln for ln in caption.split("\n") if "affiliate" not in ln.lower()]
+    if len(kept) == len(caption.split("\n")):
+        return False
+    content["caption"] = "\n".join(kept).strip()
+    return True
+
+
 def build_caption(content: dict) -> str:
     hashtags = " ".join(f"#{tag}" for tag in content.get("hashtags", []))
     if hashtags:

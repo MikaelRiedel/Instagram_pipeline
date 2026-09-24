@@ -37,6 +37,7 @@ import anthropic
 from pipeline_common import (
     _structured_json,
     playbook_prompt_block,
+    strip_false_affiliate_claim,
     MODEL,
     POST_SCHEMA,
     SCRIPT_DIR,
@@ -111,6 +112,8 @@ def main() -> None:
     print(f"\nApplying feedback: \"{feedback}\"")
     client = anthropic.Anthropic(max_retries=0, timeout=600.0)
     revised = revise_with_feedback(client, current_content, feedback)
+
+    strip_false_affiliate_claim(revised)
 
     # Keep the previous version around so you can see what changed.
     (post_dir / "content_before_feedback.json").write_text(json.dumps(current_content, indent=2))
