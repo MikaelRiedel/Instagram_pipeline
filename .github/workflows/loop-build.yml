@@ -106,7 +106,10 @@ jobs:
           NUM: ${{ steps.pick.outputs.number }}
         run: |
           BRANCH="build-loop/issue-$NUM"
-          if ! git fetch origin "$BRANCH" 2>/dev/null; then
+          # Explicit refspec: a plain "git fetch origin BRANCH" writes FETCH_HEAD
+          # but does NOT create refs/remotes/origin/BRANCH, so the git log
+          # comparison below died on an unknown revision and took the step with it.
+          if ! git fetch origin "+refs/heads/$BRANCH:refs/remotes/origin/$BRANCH" 2>/dev/null; then
             echo "No branch pushed - the agent likely asked for clarification instead."
             exit 0
           fi
