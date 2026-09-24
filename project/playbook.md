@@ -33,3 +33,13 @@ weakest rather than appending past that.
   informed reviewer citing what users report.
   *Reason: seeded; an early post invented "I haven't taken a note in 90 days",
   which is an FTC endorsement problem on an affiliate account.*
+
+- 2026-09-24 — Close the caption and the final slide with a concrete reason
+  to send the post to one specific person ("send this to whoever still types
+  out every email") or a question to answer in the comments -- not a
+  save-only CTA. A save mention can still appear, but pair it with a
+  send/comment prompt.
+  *Reason: filed as issue #6 by the critique loop; reach is the current
+  gating metric, and shares/sends plus comments are what the test-pool
+  mechanism weighs in the first ~90 minutes, while saves only matter once
+  reach already exists.*
