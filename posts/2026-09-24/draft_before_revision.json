@@ -1,0 +1,84 @@
+{
+  "tool_name": "Sider Code",
+  "tool_url": "https://sider.ai/agents/code",
+  "caption": "You can now rewrite a website's code by just describing what you want. No coding, no extensions, no GitHub rabbit hole.\n\nSider Code shipped inside the Sider browser extension on September 1st, and it's the kind of feature that makes you stop scrolling. You type a plain sentence describing how you wish a site worked, and it actually rewrites the live page to make it happen \u2014 right there in your browser.\n\nPeople are already using it to turn a 400-comment Reddit thread into a readable overview, collapse scattered X posts into one clean article with a table of contents, calm down a too-bright site into a dark, quiet workspace, and delete the YouTube Shorts shelf for good. The change sticks too \u2014 it saves to that site so it just applies automatically next time you visit.\n\nWorth saying plainly: the code it writes is frozen once applied, so if a site redesigns later, your customization can quietly break. Sider hasn't shipped a way to detect that yet \u2014 it's on their roadmap. So think of this as delightfully hacky and personal, not a permanent fix.\n\nStill wild that this is a text box now, not five browser extensions and a GitHub search.\n\nSave this so you remember to try it on the one site that's been annoying you for years. Full breakdown \u2014 link in bio.",
+  "hook_type": "curiosity_gap",
+  "slides": [
+    {
+      "heading": "There's a browser tool that rewrites any website for you",
+      "body": "You describe the change in plain English. It edits the page's actual code, live, while you watch.",
+      "image_kind": "photo",
+      "image_query": "person smiling laptop browser"
+    },
+    {
+      "heading": "You've done the workaround loop before",
+      "body": "Hunting GitHub for a userscript, installing five single-purpose extensions, or just living with a site's clutter because coding isn't your thing.",
+      "image_kind": "photo",
+      "image_query": "cluttered browser tabs frustration"
+    },
+    {
+      "heading": "\"Summarize this\" but for the whole comment section",
+      "body": "Point it at a sprawling Reddit thread and it restructures hundreds of comments into a clear overview of the actual debate.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "Turn a scattered X thread into an article",
+      "body": "Ask it to rebuild a messy string of posts into a focused article with its own table of contents and navigation.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "Tell a bright, cluttered site to calm down",
+      "body": "It can rewrite a page into a darker, quieter workspace, or make confusing terms explain themselves when you hover over them.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "Delete the parts of a site you never asked for",
+      "body": "Users have removed the YouTube Shorts shelf entirely with one sentence. The fix saves itself and reapplies automatically next visit.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "The honest catch: the code is frozen",
+      "body": "If the site redesigns later, your custom change can silently break, and Sider hasn't shipped a way to detect that yet. It's on their roadmap.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "What used to be five extensions is now one sentence",
+      "body": "No DOM inspector, no coding, no per-site tool. Just describe how the site should work and it does.",
+      "image_kind": "photo",
+      "image_query": "relaxed person browsing phone"
+    },
+    {
+      "heading": "One text box replaces the entire workaround habit",
+      "body": "Reshape comment threads, mute clutter, rebuild messy pages \u2014 all from inside the extension you likely already have installed.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "Try it on the one site that's annoyed you for years",
+      "body": "Save this post, open Sider, and describe the fix you've wanted for months. See what changes.",
+      "image_kind": "graphic",
+      "image_query": ""
+    }
+  ],
+  "hashtags": [
+    "SiderAI",
+    "AItools",
+    "BrowserExtension",
+    "ProductivityHacks",
+    "AIagent",
+    "TechTips",
+    "LifeHacks",
+    "NoCode"
+  ],
+  "sources": [
+    "https://sider.ai/agents/code",
+    "https://www.producthunt.com/products/sider-code-customize-any-website",
+    "https://sider.ai/whats-new",
+    "https://sider.ai/whats-new/browser-extension"
+  ]
+}
