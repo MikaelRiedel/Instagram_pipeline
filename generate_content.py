@@ -53,10 +53,13 @@ from pipeline_common import (
     render_all_slides,
 )
 
-# Well-known incumbents to steer away from by default in BOTH modes -- the
-# point of this account is surfacing things the audience hasn't already
-# heard of a hundred times, not re-reviewing ChatGPT again.
-OVEREXPOSED_TOOLS = [
+# Well-known, high-search-volume tools. A zero-follower account has no
+# audience graph, so Search and hashtags are the only discovery surface --
+# and both only surface posts against existing query/tag volume. Avoiding
+# these entirely (as this list used to do) meant every post targeted a tag
+# with ~zero traffic, which is why reach has been stuck near 0. Now used to
+# require a differentiated ANGLE on these tools instead of avoiding them.
+HEAD_TERM_TOOLS = [
     "ChatGPT", "Claude", "Gemini", "Microsoft Copilot", "GitHub Copilot",
     "Notion AI", "Grammarly", "Jasper", "Copy.ai", "Midjourney", "Canva Magic Studio",
 ]
@@ -104,7 +107,7 @@ def choose_mode(history: list[str]) -> str:
 def research_topic(client: anthropic.Anthropic, history: list[str], mode: str) -> str:
     avoid_list = ", ".join(history) if history else "(none yet -- this is the first post)"
     today_str = date.today().strftime("%B %d, %Y")
-    overexposed = ", ".join(OVEREXPOSED_TOOLS)
+    head_terms = ", ".join(HEAD_TERM_TOOLS)
 
     if mode == "proven":
         task = (
@@ -178,9 +181,12 @@ def research_topic(client: anthropic.Anthropic, history: list[str], mode: str) -
                 "picking tools that could realistically have an affiliate/referral program "
                 "-- matters more than hype.\n\n"
                 f"{task}\n\n"
-                f"Do NOT pick: {overexposed} (too oversaturated to be interesting) -- unless "
-                "you find a genuinely newsworthy angle, like a brand-new flagship feature or "
-                "version launch, in which case name that specific angle explicitly.\n"
+                f"These are high-search-volume, head-term tools: {head_terms}. Picking one of "
+                "them is fine, and often better for discovery than a tool nobody is searching "
+                "for -- but only if the post's angle is a specific underused feature or a "
+                "direct comparison (e.g. 'the Notion AI feature nobody uses', 'Otter vs "
+                "Grammarly for meeting notes'), not a generic overview of the tool. The angle "
+                "must be the differentiator here, not the tool's obscurity.\n"
                 f"Do NOT repeat any of these already-covered topics: {avoid_list}.\n\n"
                 "Reply with a plain-text research summary. Start with this line exactly, "
                 "since it's used to fetch the product's own screenshot for the slides:\n"
