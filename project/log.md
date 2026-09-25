@@ -2,6 +2,10 @@
 
 Append-only. Newest at top.
 
+## 2026-09-25 — stats loop
+Insufficient signal: 6 settled posts, 9 total reach, 0 total saves. Needs 100 reach or 3 saves before any pattern is believable.
+No directive added. Reach, not copy, is the bottleneck.
+
 ## 2026-09-24 — critique loop
 Reviewed 9 recent posts and live metrics; filed 1 issue(s).
 Argument: The backlog already correctly identifies the real growth problem (no distribution, wrong format bet, topic selection that avoids searchable tools, optimizing for the wrong algorithmic signal) — reach ~2 is the thing to fix, and none of that needed re-filing here. But while everyone is focused on reach, the generation pipeline quietly shipped a caption with a false compliance claim under AUTO_PUBLISH with no guardrail to catch it, which is a small fix now and a real liability the moment affiliate programs (already planned) go live and the same unguarded logic has to get the disclosure right every single day.
