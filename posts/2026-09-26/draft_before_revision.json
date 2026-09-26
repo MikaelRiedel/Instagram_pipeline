@@ -1,0 +1,84 @@
+{
+  "tool_name": "Framer",
+  "tool_url": "https://www.framer.com",
+  "caption": "An AI just moved onto your website's design canvas and started working like a real designer.\n\nFramer has quietly been \"the no-code builder that looks like Figma\" for years. But its July 2026 update, announced by co-founder Jurre Houtkamp and featured on Product Hunt's weekly leaderboard, changes what it actually is.\n\nYou can now drop an AI agent directly onto the canvas and have it design sections, write copy, analyze your existing site, and organize your pages \u2014 in the same visual editor a human would use. And it's not locked to one AI: you can connect Claude Code or Codex and let those work the canvas instead. Product Hunt's own AI Agents roundup singled it out for turning prompts into sites that actually look finished.\n\nThe part that might matter more for anyone with a portfolio, a passion project, or a site they're scared to touch: Branching. You fork your live site, mess with a full redesign in the fork, and only merge it back if you like it. Nothing you try can break what's already live.\n\nThere's also a new Community space where people are sharing (and getting paid for) templates and components they built \u2014 so a weekend project can quietly become income.\n\nThe honest catch: if you already use Framer daily, this won't feel brand new. And the AI pass is still early \u2014 complex, highly custom designs will likely need a human cleanup afterward.\n\nSend this to whoever keeps saying \"I've been meaning to redo my site\" for a year. Save it so you have it when you're ready to actually try. Full breakdown \u2014 link in bio.",
+  "hook_type": "curiosity_gap",
+  "slides": [
+    {
+      "heading": "An AI that edits your website like a real designer would",
+      "body": "",
+      "image_kind": "photo",
+      "image_query": "person laptop screen glow"
+    },
+    {
+      "heading": "You know the loop: brief someone, wait days, then fix it yourself anyway",
+      "body": "Portfolio site, passion project, wedding page \u2014 same tedious cycle every time.",
+      "image_kind": "photo",
+      "image_query": "person waiting laptop frustrated"
+    },
+    {
+      "heading": "Drop an AI agent right onto the canvas",
+      "body": "It designs sections, writes copy, checks your existing site, and organizes pages \u2014 inside the actual visual editor, not a chat box.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "It doesn't have to be Framer's own AI",
+      "body": "Connect Claude Code or Codex and let whichever model you already trust be the one editing your live design.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "Fork your site, break nothing",
+      "body": "Branching lets you clone your live site, try a full redesign inside the copy, and only merge it back if you love it.",
+      "image_kind": "product",
+      "image_query": ""
+    },
+    {
+      "heading": "It's still early software, and that's worth knowing",
+      "body": "For simple pages the AI pass can be close to done. For a highly custom design, expect to clean up after it.",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "Templates you build can quietly earn you money",
+      "body": "The new Community space lets creators share and sell templates and components \u2014 a weekend project becomes passive income.",
+      "image_kind": "photo",
+      "image_query": "person designing laptop cafe"
+    },
+    {
+      "heading": "What used to take a week of back-and-forth now takes an afternoon",
+      "body": "Brief, draft, revise, and launch \u2014 without ever touching the version that's actually live until you're sure.",
+      "image_kind": "photo",
+      "image_query": "laptop finished website screen"
+    },
+    {
+      "heading": "An AI co-designer, a safety net, a way to sell what you make",
+      "body": "",
+      "image_kind": "graphic",
+      "image_query": ""
+    },
+    {
+      "heading": "Try it on the site you've been putting off. Send this to that friend.",
+      "body": "Save this post, then open Framer this week and see what the agent does with your half-finished page.",
+      "image_kind": "graphic",
+      "image_query": ""
+    }
+  ],
+  "hashtags": [
+    "framer",
+    "aiagents",
+    "nocode",
+    "webdesign",
+    "productivitytools",
+    "designtools",
+    "sidehustle",
+    "producthunt",
+    "aitools"
+  ],
+  "sources": [
+    "https://www.producthunt.com/leaderboard/weekly/2026/29",
+    "https://www.producthunt.com/categories/ai-agents",
+    "https://www.framer.com"
+  ]
+}
