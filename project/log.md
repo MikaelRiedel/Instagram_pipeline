@@ -2,6 +2,10 @@
 
 Append-only. Newest at top.
 
+## 2026-09-26 — stats loop
+Insufficient signal: 7 settled posts, 11 total reach, 0 total saves. Needs 100 reach or 3 saves before any pattern is believable.
+No directive added. Reach, not copy, is the bottleneck.
+
 ## 2026-09-25 — critique loop
 Reviewed 10 recent posts and live metrics; filed 1 issue(s).
 Argument: The cold-start distribution problem is real but already thoroughly diagnosed and filed (issues #1, #4, #10 all say the same thing: no social graph, no test-pool signal, reach can't move on copy alone), and the current backlog of three issues already covers the remaining genuine discoverability gaps, so another reach-strategy suggestion from me would just be a fourth copy of the same filing. The thing nobody has caught is a concrete, already-shipped defect: a live post actually went out with raw '\u2014' escape garbage in place of a dash, which is a credibility problem waiting to compound the moment the audience-building work elsewhere on the backlog starts to pay off.
