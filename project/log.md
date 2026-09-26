@@ -2,6 +2,10 @@
 
 Append-only. Newest at top.
 
+## 2026-09-26 — critique loop
+Reviewed 11 recent posts and live metrics; filed 1 issue(s).
+Argument: This account has had a lot of real, well-targeted investigation into cold-start mechanics, format, and hashtags, but the reach numbers are so flat and so low across such different posts that the more likely explanation is a basic, un-checked account setting rather than anything the pipeline or playbook controls — and that possibility is cheap enough to rule out that it should jump the queue ahead of format and copy work. Everything else in the backlog is worth doing eventually, but only once it's confirmed the account is actually eligible to be shown to anyone beyond itself.
+
 ## 2026-09-26 — stats loop
 Insufficient signal: 7 settled posts, 11 total reach, 0 total saves. Needs 100 reach or 3 saves before any pattern is believable.
 No directive added. Reach, not copy, is the bottleneck.
